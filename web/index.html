@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<!--
+  Copyright (c) 2015, <your name>. All rights reserved. Use of this source code
+  is governed by a BSD-style license that can be found in the LICENSE file.
+-->
+
+<html>
+<head>
+    <title>fnx_router - demo</title>
+
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+        fnx-router {
+            margin: .5em;
+            padding: .5em;
+            border: 1px solid #bbb;
+            box-shadow: 5px 5px 2px rgba(0,0,0,0.2);
+        }
+        *[router-visible] {
+            opacity: 1;
+            transition: opacity 300ms;
+        }
+        h1, h2, h3 {
+            margin: 0;
+        }
+        *[router-invisible] {
+            opacity: .2;
+            transition: opacity 300ms;
+        }
+        li {
+            display: block;
+        }
+        a {
+            text-decoration: none;
+            display: inline-block;
+            padding: .1em;
+            margin: .1em;
+            background: #ddd;
+            font-family: monospace;
+        }
+        a:hover {
+            background: #bbb;
+        }
+    </style>
+
+</head>
+
+<body unresolved >
+
+<fnx-router>
+    <h1>This is a routing root</h1>
+    <ul>
+        <li><a href="#/1">&lt;a href="#/1"&gt;</a></li>
+        <li><a href="#/2">&lt;a href="#/2"&gt;</a></li>
+    </ul>
+
+    <fnx-router route="1">
+        <h2>This is child 1</h2>
+        <ul>
+            <li><a href="#/1/a">&lt;a href="#/1/a"&gt;</a></li>
+            <li><a href="#" data-router="./b">&lt;a href="#" data-router="./b"&gt;</a></li>
+            <li><a href="#" data-router="./c" data-router-arg1="foo" data-router-arg2="3.1415926">&lt;a href="#" data-router="./c" data-router-arg1="foo" data-router-arg2="3.1415926"&gt;</a></li>
+            <li><a href="#" data-router="../2">&lt;a href="#" data-router="../2"&gt;</a></li>
+            <li><a href="#" data-router="#/2/a">&lt;a href="#" data-router="#/2/a"&gt;</a></li>
+        </ul>
+        <fnx-router route="a">
+            <h3>This is child a</h3>
+        </fnx-router>
+        <fnx-router route="b">
+            <h3>This is child b</h3>
+        </fnx-router>
+        <fnx-router route="c">
+            <h3>This is child c</h3>
+        </fnx-router>
+    </fnx-router>
+
+    <fnx-router route="2">
+        <h2>This is child 2</h2>
+        <fnx-router route="a">
+            <h3>This is child a</h3>
+        </fnx-router>
+    </fnx-router>
+
+</fnx-router>
+
+<fnx-router>
+    <h1>This is another routing root</h1>
+    <fnx-router route="1">
+        <h2>This is child 1</h2>
+        <fnx-router route="a">
+            <h3>This is child a</h3>
+        </fnx-router>
+    </fnx-router>
+</fnx-router>
+
+<script type="application/dart" src="index.dart"></script>
+<script src="packages/browser/dart.js"></script>
+</body>
+</html>

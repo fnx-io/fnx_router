@@ -1,0 +1,37 @@
+<!doctype html>
+<!-- custom_html_test.html -->
+<html>
+<head>
+    <title>Custom HTML Test</title>
+    <script src="packages/web_components/webcomponents.js"></script>
+    <link rel="x-dart-test" href="fnx_router_test.dart">
+    <script src="packages/test/dart.js"></script>
+</head>
+<body>
+<fnx-router id="A">
+    <fnx-router route="1" id="A.1">
+        <fnx-router route="a" id="A.1.a">
+        </fnx-router>
+        <fnx-router route="b" id="A.1.b">
+        </fnx-router>
+        <fnx-router route="c" id="A.1.c">
+            <button id="A.1.c-button">button</button>
+        </fnx-router>
+    </fnx-router>
+
+    <fnx-router route="2" id="A.2">
+        <fnx-router route="a" id="A.2.a">
+        </fnx-router>
+    </fnx-router>
+
+</fnx-router>
+
+<fnx-router id="B">
+    <fnx-router route="1" id="B.1">
+        <fnx-router route="a" id="B.1.a">
+        </fnx-router>
+    </fnx-router>
+</fnx-router>
+
+</body>
+</html>

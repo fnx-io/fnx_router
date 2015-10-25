@@ -1,0 +1,36 @@
+name: 'fnx_router'
+version: 0.1.0
+description: Declarative (mark-up) router for Polymer Dart 1.0
+author: Tomas Zverina <tomucha@gmail.com>
+#homepage: https://www.example.com
+
+environment:
+  sdk: '>=1.9.0 <2.0.0'
+
+dependencies:
+  browser: ^0.10.0
+  polymer: ^1.0.0-rc.3
+  reflectable: ^0.3.1
+  web_components: ^0.12.0
+  logging: any
+
+dev_dependencies:
+  test: "^0.12.5+1"
+
+transformers:
+- web_components:
+    entry_points:
+      - web/index.html
+      - test/fnx_router_test.html
+- reflectable:
+    entry_points:
+      - web/index.dart
+      - test/fnx_router_test.dart
+- $dart2js:
+    $include: '**/*.bootstrap.initialize.dart'
+    minify: true
+    commandLineOptions:
+    - --trust-type-annotations
+    - --trust-primitives
+- test/pub_serve:
+    $include: test/**_test{.*,}.dart
