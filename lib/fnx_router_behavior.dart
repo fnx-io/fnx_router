@@ -11,6 +11,8 @@ void configureRouterNavigator(FnxRouterNavigator navigator) {
   _navigator = navigator;
 }
 
+final int CU_SEMI = ";".codeUnitAt(0);
+final int CU_SLASH = "/".codeUnitAt(0);
 
 @behavior
 abstract class FnxRouterBehavior {
@@ -23,10 +25,9 @@ abstract class FnxRouterBehavior {
   @property
   bool visible = false;
 
-  FnxRouterNavigator navigator = _navigator;
+  bool excludedFromRouting = false;
 
-  FnxRouterBehavior _parentRouter = null;
-  FnxRouterBehavior _rootRouter = null;
+  FnxRouterNavigator navigator = _navigator;
 
   @property
   String fullRoute = null;
@@ -41,21 +42,22 @@ abstract class FnxRouterBehavior {
 
   Map<String, FnxRouterBehavior> _children = null;
 
-  /*
-  @Property(computed: 'computeHasEvent(event)')
-  bool hasEvent = false;
+  FnxRouterBehavior _parentRouter = null;
 
-  @reflectable
-  bool computeHasEvent(String e) {
-    return e != null;
-  }
-  */
+  FnxRouterBehavior _rootRouter = null;
 
   void attached() {
     _log.info("Router node attached to document");
     _parentRouter = findParentRouter((this as Element).parent);
     if (route == null && _parentRouter != null) {
-        throw "$this route is null, only root router is allowed to have empty route";
+      _log.info("element $this has no route, it's excluded from routing tree");
+      excludedFromRouting = true;
+      visible = true;
+      routerParams = [];
+      fullParentRoute = null;
+      fullRoute = null;
+      routeChanged(visible, routerParams);
+      return;
     }
     if (route != null && route.startsWith("/")) {
       throw "Routes cannot start with '/' ($route)";
@@ -74,12 +76,16 @@ abstract class FnxRouterBehavior {
       _log.info("New root router: $this");
       // I'm root
       fullParentRoute = "";
-      fullRoute = "";
+      if (route == null) {
+        fullRoute = "";
+      } else {
+        fullRoute = "/$route";
+      }
     } else {
       fullParentRoute = _parentRouter.fullRoute;
       fullRoute = fullParentRoute + "/" + route;
     }
-    _log.info("Registered route '${fullRoute}'");
+    _log.info("Registered route '${fullRoute}' for element $this");
   }
 
   void _registerToRootRouter() {
@@ -100,6 +106,10 @@ abstract class FnxRouterBehavior {
 
   @Listen("tap")
   void catchRouteChangeEvents(Event e, detail) {
+    if (excludedFromRouting) {
+      // ignore
+      return;
+    }
     if (!(e.target is Element)) return;
     Map<String, String> dataset = (e.target as Element).dataset;
     String route = dataset["router"];
@@ -112,13 +122,13 @@ abstract class FnxRouterBehavior {
       int a=1;
       String param = null;
 
-      if (dataset["routerArg0"] != null) {
-        throw "You have an element with data-router-arg0, but first argument should be data-router-arg1";
+      if (dataset["routerParam0"] != null) {
+        throw "You have an element with data-router-param0, but first parameter should be data-router-param1";
       }
 
-      while ((param = dataset["routerArg$a"]) != null ) {
+      while ((param = dataset["routerParam$a"]) != null ) {
         a++;
-        _log.fine("'$fullRoute' adding route argument $a=$param");
+        _log.fine("'$fullRoute' adding route parameter $a=$param");
         params.add(param);
       }
 
@@ -138,7 +148,12 @@ abstract class FnxRouterBehavior {
   }
 
   FnxRouterBehavior findParentRouter(Element element) {
-    if (element is FnxRouterBehavior) return element as FnxRouterBehavior;
+    if (element is FnxRouterBehavior) {
+      FnxRouterBehavior p = element as FnxRouterBehavior;
+      if (!p.excludedFromRouting) {
+        return p;
+      }
+    }
     if (element is BodyElement) return null;
     if (element is HtmlElement) return null;
     Element parent = element.parent;
@@ -148,15 +163,28 @@ abstract class FnxRouterBehavior {
 
   void _resolveVisibility(String routeWithParams, [List<String> params]) {
     _log.fine("'$fullRoute' resolving it's visibility for '$routeWithParams' route");
-    bool newVisible = null;
+    bool newVisible = false;
     if (routeWithParams == null) {
-      newVisible = false;
+      // not visible
     } else {
       if (routeWithParams.startsWith(fullRoute)) {
-        newVisible = true;
+        // global route starts with our route, that's almost good, but:
+        if (routeWithParams.length == fullRoute.length) {
+          // that's good
+          newVisible = true;
+        } else {
+          int code = routeWithParams.codeUnitAt(fullRoute.length);
+          if (code == CU_SEMI || code == CU_SLASH) {
+            // that's also good
+            newVisible = true;
+          } else {
+            // it's not a match, it's something like:
+            // '/route-qwertyu' doesn't match '/rou'
+          }
+        }
 
       } else {
-        newVisible = false;
+        // not visible
       }
     }
     bool _paramsChanged = false;

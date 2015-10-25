@@ -22,10 +22,12 @@ transformers:
     entry_points:
       - web/index.html
       - test/fnx_router_test.html
+      - test/fnx_router_special_test.html
 - reflectable:
     entry_points:
       - web/index.dart
       - test/fnx_router_test.dart
+      - test/fnx_router_special_test.dart
 - $dart2js:
     $include: '**/*.bootstrap.initialize.dart'
     minify: true

@@ -123,9 +123,9 @@ main() async {
 
     test("Route to '#/2  with params'", () {
       rB1a.dataset["router"]="#/2";
-      rB1a.dataset["routerArg1"]="1234567890";
-      rB1a.dataset["routerArg2"]="qwertyuiop";
-      rB1a.dataset["routerArg4"]="will be ignored";
+      rB1a.dataset["routerParam1"]="1234567890";
+      rB1a.dataset["routerParam2"]="qwertyuiop";
+      rB1a.dataset["routerParam4"]="will be ignored";
       rB1a.fire("tap");
 
       expect(rA.visible, equals(true), reason: "rA");
