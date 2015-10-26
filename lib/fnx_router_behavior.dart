@@ -4,7 +4,7 @@ import 'dart:html';
 import 'package:polymer/polymer.dart';
 import 'package:logging/logging.dart';
 
-List<FnxRouterBehavior> _allRootRouters = [];
+List<FnxRouterBehavior> _allRoutingNodes = [];
 FnxRouterNavigator _navigator = new FnxRouterNavigator();
 
 void configureRouterNavigator(FnxRouterNavigator navigator) {
@@ -22,17 +22,15 @@ abstract class FnxRouterBehavior {
   @property
   String route = null;
 
-  @property
-  bool visible = false;
-
-  bool excludedFromRouting = false;
+  @property(notify: true)
+  bool routerVisible = false;
 
   FnxRouterNavigator navigator = _navigator;
 
   @property
   String fullRoute = null;
 
-  @property
+  @property(notify: true)
   List<String> routerParams = [];
 
   @property
@@ -40,11 +38,7 @@ abstract class FnxRouterBehavior {
 
   String _lastMatchedRoute = null;
 
-  Map<String, FnxRouterBehavior> _children = null;
-
   FnxRouterBehavior _parentRouter = null;
-
-  FnxRouterBehavior _rootRouter = null;
 
   bool _initialized = false;
 
@@ -57,16 +51,6 @@ abstract class FnxRouterBehavior {
     _initialized = true;
     _log.info("Router node attached to document");
     _parentRouter = findParentRouter((this as Element).parent);
-    if (route == null && _parentRouter != null) {
-      _log.info("element $this has no route, it's excluded from routing tree");
-      excludedFromRouting = true;
-      visible = true;
-      routerParams = [];
-      fullParentRoute = null;
-      fullRoute = null;
-      routeChanged(visible, routerParams);
-      return;
-    }
     if (route != null && route.startsWith("/")) {
       throw "Routes cannot start with '/' ($route)";
     }
@@ -75,7 +59,7 @@ abstract class FnxRouterBehavior {
     }
 
     _buildFullRoutes();
-    _registerToRootRouter();
+    _registerRoutingNode();
     _resolveVisibility(navigator.currentRoute);
 
   }
@@ -92,33 +76,21 @@ abstract class FnxRouterBehavior {
       }
     } else {
       fullParentRoute = _parentRouter.fullRoute;
-      fullRoute = fullParentRoute + "/" + route;
+      if (route != null) {
+        fullRoute = fullParentRoute + "/" + route;
+      } else {
+        fullRoute = fullParentRoute;
+      }
     }
     _log.info("Registered route '${fullRoute}' for element $this");
   }
 
-  void _registerToRootRouter() {
-    if (_parentRouter == null) {
-      _rootRouter = this;
-      _allRootRouters.add(this);
-      _children = {};
-
-    } else {
-      _rootRouter = _parentRouter._rootRouter;
-      if (_rootRouter._children[fullRoute] != null) {
-        throw "There is already registered router node with route $fullRoute";
-      } else {
-        _rootRouter._children[fullRoute] = this;
-      }
-    }
+  void _registerRoutingNode() {
+    _allRoutingNodes.add(this);
   }
 
   @Listen("tap")
   void catchRouteChangeEvents(Event e, detail) {
-    if (excludedFromRouting) {
-      // ignore
-      return;
-    }
     if (!(e.target is Element)) return;
     Map<String, String> dataset = (e.target as Element).dataset;
     String route = dataset["router"];
@@ -159,12 +131,10 @@ abstract class FnxRouterBehavior {
   FnxRouterBehavior findParentRouter(Element element) {
     if (element is FnxRouterBehavior) {
       FnxRouterBehavior p = element as FnxRouterBehavior;
-      if (!p.excludedFromRouting) {
-        if (!p._initialized) {
-          p._initRouting();
-        }
-        return p;
+      if (!p._initialized) {
+        p._initRouting();
       }
+      return p;
     }
     if (element is BodyElement) return null;
     if (element is HtmlElement) return null;
@@ -212,13 +182,13 @@ abstract class FnxRouterBehavior {
       routerParams = [];
     }
 
-    if (visible != newVisible || _paramsChanged ) {
+    if (routerVisible != newVisible || _paramsChanged ) {
       // visibility changed
       _log.info("'$fullRoute' visibility or params changed: visible=$newVisible, params=$routerParams (element $this)");
-      visible = newVisible;
-      routeChanged(visible, routerParams);
+      routerVisible = newVisible;
+      routeChanged(routerVisible, routerParams);
       _log.fine("'$fullRoute' is firing 'router-visibility' event");
-      (this as PolymerElement).fire("router-visibility", detail: visible);
+      (this as PolymerElement).fire("router-visibility", detail: routerVisible);
     }
   }
 
@@ -295,13 +265,8 @@ class FnxRouterNavigator {
   }
 
   void _resolveVisibilities(String routeWithParams, [List<String> params]) {
-    _log.info("Resolving visibilities for '${routeWithParams}', with params=$params");
-    _allRootRouters.forEach((FnxRouterBehavior root) {
-      _log.fine("Resolving visibility of root $root");
-      root._resolveVisibility(routeWithParams, params);
-      _log.fine("Resolving visibility of ${root._children.length} children");
-      root._children.values.forEach((FnxRouterBehavior child) => child._resolveVisibility(routeWithParams, params));
-    });
+    _log.info("Resolving visibilities for '${routeWithParams}', with params=$params, ${_allRoutingNodes.length} known routing nodes");
+    _allRoutingNodes.forEach((FnxRouterBehavior child) => child._resolveVisibility(routeWithParams, params));
   }
 
   List<String> parseRouteParams(String hash) {

@@ -37,7 +37,7 @@ class FnxRouter extends PolymerElement with FnxRouterBehavior {
 
   void _openPaperDialog() {
     try {
-      if (visible) {
+      if (routerVisible) {
         children[0].open();
       } else {
         children[0].close();

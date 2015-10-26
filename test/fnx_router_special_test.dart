@@ -36,11 +36,10 @@ main() async {
 
   group("Start state: /1", () {
     test("Visible roots", () {
-      print (rA);
-      expect(rA.visible, equals(true));
-      expect(rB.visible, equals(false));
-      expect(rA1a.visible, equals(false));
-      expect(dummy.visible, equals(true));
+      expect(rA.routerVisible, equals(true), reason:"rA");
+      expect(rB.routerVisible, equals(false), reason:"rB");
+      expect(rA1a.routerVisible, equals(false), reason:"rA1");
+      expect(dummy.routerVisible, equals(false), reason:"dummy");
     });
   });
 
@@ -50,21 +49,32 @@ main() async {
       dummy.dataset["router"]="#/";
       dummy.fire("tap");
 
-      expect(rA.visible, equals(true), reason: "rA");
-      expect(rB.visible, equals(false), reason: "rB");
-      expect(rA1a.visible, equals(false), reason: "rA1a");
-      expect(dummy.visible, equals(true), reason: "dummy");
+      expect(rA.routerVisible, equals(true), reason: "rA");
+      expect(rB.routerVisible, equals(false), reason: "rB");
+      expect(rA1a.routerVisible, equals(false), reason: "rA1a");
+      expect(dummy.routerVisible, equals(false), reason: "dummy");
     });
 
     test("Route to '#/another-root'", () {
       dummy.dataset["router"]="#/another-root";
       dummy.fire("tap");
 
-      expect(rA.visible, equals(true), reason: "rA");
-      expect(rB.visible, equals(true), reason: "rB");
-      expect(rA1a.visible, equals(false), reason: "rA1a");
-      expect(dummy.visible, equals(true), reason: "dummy");
+      expect(rA.routerVisible, equals(true), reason: "rA");
+      expect(rB.routerVisible, equals(true), reason: "rB");
+      expect(rA1a.routerVisible, equals(false), reason: "rA1a");
+      expect(dummy.routerVisible, equals(false), reason: "dummy");
     });
+
+    test("Route to '#/1'", () {
+      dummy.dataset["router"]="#/1";
+      dummy.fire("tap");
+
+      expect(rA.routerVisible, equals(true), reason: "rA");
+      expect(rB.routerVisible, equals(false), reason: "rB");
+      expect(rA1a.routerVisible, equals(false), reason: "rA1a");
+      expect(dummy.routerVisible, equals(true), reason: "dummy");
+    });
+
 
   });
 
