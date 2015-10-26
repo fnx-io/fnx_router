@@ -22,19 +22,18 @@ abstract class FnxRouterBehavior {
   @property
   String route = null;
 
-  @property(notify: true)
+  @property
   bool routerVisible = false;
 
-  FnxRouterNavigator navigator = _navigator;
+  @property
+  String absoluteRoute = null;
 
   @property
-  String fullRoute = null;
+  String absoluteParentRoute = null;
 
-  @property(notify: true)
   List<String> routerParams = [];
 
-  @property
-  String fullParentRoute = null;
+  FnxRouterNavigator navigator = _navigator;
 
   String _lastMatchedRoute = null;
 
@@ -58,31 +57,31 @@ abstract class FnxRouterBehavior {
       throw "Routes cannot end with '/' ($route)";
     }
 
-    _buildFullRoutes();
+    _buildAbsoluteRoutes();
     _registerRoutingNode();
     _resolveVisibility(navigator.currentRoute);
 
   }
 
-  void _buildFullRoutes() {
+  void _buildAbsoluteRoutes() {
     if (_parentRouter == null) {
       _log.info("New root router: $this");
       // I'm root
-      fullParentRoute = "";
+      absoluteParentRoute = "";
       if (route == null) {
-        fullRoute = "";
+        absoluteRoute = "";
       } else {
-        fullRoute = "/$route";
+        absoluteRoute = "/$route";
       }
     } else {
-      fullParentRoute = _parentRouter.fullRoute;
+      absoluteParentRoute = _parentRouter.absoluteRoute;
       if (route != null) {
-        fullRoute = fullParentRoute + "/" + route;
+        absoluteRoute = absoluteParentRoute + "/" + route;
       } else {
-        fullRoute = fullParentRoute;
+        absoluteRoute = absoluteParentRoute;
       }
     }
-    _log.info("Registered route '${fullRoute}' for element $this");
+    _log.info("Registered route '${absoluteRoute}' for element $this");
   }
 
   void _registerRoutingNode() {
@@ -95,7 +94,7 @@ abstract class FnxRouterBehavior {
     Map<String, String> dataset = (e.target as Element).dataset;
     String route = dataset["router"];
     if (route != null) {
-      _log.info("'$fullRoute' detected routing event: data-router=$route, stopping event propagation");
+      _log.info("'$absoluteRoute' detected routing event: data-router=$route, stopping event propagation");
       e.stopPropagation();
       e.preventDefault();
 
@@ -109,19 +108,22 @@ abstract class FnxRouterBehavior {
 
       while ((param = dataset["routerParam$a"]) != null ) {
         a++;
-        _log.fine("'$fullRoute' adding route parameter $a=$param");
+        _log.fine("'$absoluteRoute' adding route parameter $a=$param");
         params.add(param);
       }
 
       if (route.startsWith("#/")) {
         route = route.substring(1);
         navigateAbsolute(route, params);
+
       } else if (route.startsWith("../")) {
         route = route.substring(3);
         navigateToSiblink(route, params);
+
       } else if (route.startsWith("./")) {
         route = route.substring(2);
         navigateToChild(route, params);
+
       } else {
         throw "Your data-router must start with '#/' or '../' or './'";
       }
@@ -144,18 +146,18 @@ abstract class FnxRouterBehavior {
   }
 
   void _resolveVisibility(String routeWithParams, [List<String> params]) {
-    _log.fine("'$fullRoute' resolving it's visibility for '$routeWithParams' route");
+    _log.fine("'$absoluteRoute' resolving it's visibility for '$routeWithParams' route");
     bool newVisible = false;
     if (routeWithParams == null) {
       // not visible
     } else {
-      if (routeWithParams.startsWith(fullRoute)) {
+      if (routeWithParams.startsWith(absoluteRoute)) {
         // global route starts with our route, that's almost good, but:
-        if (routeWithParams.length == fullRoute.length) {
+        if (routeWithParams.length == absoluteRoute.length) {
           // that's good
           newVisible = true;
         } else {
-          int code = routeWithParams.codeUnitAt(fullRoute.length);
+          int code = routeWithParams.codeUnitAt(absoluteRoute.length);
           if (code == CU_SEMI || code == CU_SLASH) {
             // that's also good
             newVisible = true;
@@ -184,10 +186,10 @@ abstract class FnxRouterBehavior {
 
     if (routerVisible != newVisible || _paramsChanged ) {
       // visibility changed
-      _log.info("'$fullRoute' visibility or params changed: visible=$newVisible, params=$routerParams (element $this)");
+      _log.info("'$absoluteRoute' visibility or params changed: visible=$newVisible, params=$routerParams (element $this)");
       routerVisible = newVisible;
       routeChanged(routerVisible, routerParams);
-      _log.fine("'$fullRoute' is firing 'router-visibility' event");
+      _log.fine("'$absoluteRoute' is firing 'router-visibility' event");
       (this as PolymerElement).fire("router-visibility", detail: routerVisible);
     }
   }
@@ -199,15 +201,15 @@ abstract class FnxRouterBehavior {
     if (_router == null) {
       throw "Cannot navigate to $element, it has no FnxRouterBehavior parent";
     }
-    navigateAbsolute(_router.fullRoute, params);
+    navigateAbsolute(_router.absoluteRoute, params);
   }
 
   void navigateToSiblink(String route, [List<String> params = null]) {
-    navigateAbsolute(fullParentRoute + "/" + route, params);
+    navigateAbsolute(absoluteParentRoute + "/" + route, params);
   }
 
   void navigateToChild(String route, [List<String> params = null]) {
-    navigateAbsolute(fullRoute + "/" + route, params);
+    navigateAbsolute(absoluteRoute + "/" + route, params);
   }
 
   void navigateAbsolute(String absoluteRoute, [List<String> params = null]) {

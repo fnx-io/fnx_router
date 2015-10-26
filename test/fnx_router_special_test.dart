@@ -2,7 +2,6 @@
 import 'package:test/test.dart';
 
 import 'dart:html';
-import 'package:test/test.dart';
 import 'package:polymer/polymer.dart';
 import 'package:fnx_router/fnx_router.dart';
 import 'package:logging/logging.dart';

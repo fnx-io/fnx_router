@@ -2,11 +2,11 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 library fnx_router.web.index;
 
-import 'package:fnx_router/fnx_router.dart';
 import 'package:polymer/polymer.dart';
 import 'package:logging/logging.dart';
 
-/// [MainApp] used!
+import 'package:fnx_router/fnx_router.dart';
+
 main() async {
 
   Logger.root.level = Level.ALL;
@@ -15,4 +15,5 @@ main() async {
   });
 
   await initPolymer();
+
 }

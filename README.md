@@ -8,14 +8,16 @@ Declarative hierarchical router for Polymer Dart 1.0. Use it like this:
 		<a href="#/amazing/features">show me amazing features</a>
 	
 		<fnx-router route="amazing">
+		
 			<fnx-router route="stuff">
-				<h1>WOW!</h1>
+				<h1>wow!</h1>
 			</fnx-router>
+			
 			<fnx-router route="features">
-				<h1>NO WAY!</h1>
+				<h1>no way!</h1>
 			</fnx-router>
+			
 			...
-
 
 
 Comes in with handy Polymer `@bahavior` which you can use to make **any of your elements** routing capable.
@@ -32,11 +34,15 @@ value. Every element `with FnxRouterBehavior` has `route` attribute and becomes 
 			...
 
 Elements create a tree hierarchy of _routing nodes_ (subtree of DOM, if you want).
-Their full route depends on route of their parents (and recursively up to the root element).
+Their absolute route depends on route of their parents (and recursively up to the root element).
 
-	<fnx-router> <!-- this is a routing root and it has no route, it will be visible always -->
+	<fnx-router> <!-- this is a routing root and it has no
+	                  "route" attribute , it will be visible always -->
+	                  
 		<fnx-router route="amazing"> <!-- visible on #/amazing -->
+		
 			<fnx-router route="stuff"> <!-- visible on #/amazing/stuff -->
+			
 				<fnx-router route="vol1"> <!-- visible on #/amazing/stuff/vol1 -->
 
 Level separator `/` is a constant provided by *fnx_router*.
@@ -48,7 +54,7 @@ Your user can navigate through your app by simply changing location anchor:
 	<a href="#/amazing/stuff">show me amazing stuff</a>
 	<a href="#/amazing/features">show me amazing features</a>
 
-However - this requires you to know the full path (full route) to the element,
+However - this requires you to know the absolute path (absolute route) to the element,
 which is not very practical - hierarchical routing then loses it's purpose.
 There are several other ways how to navigate.
 
@@ -99,8 +105,8 @@ You can also change the route programmatically, but more about this later.
 
 **fnx_router** package contains `<fnx-router>` element. It's a
 simple `display: block;` element. You can use it instead of
-your regular `<div>`. It has one special attribute - `route`. When element should be visible, it has a bool
-attribute `router-visible` set, so you can implement actual hiding anyway you want:
+your regular `<div>`. It has one special attribute - `route`. Whenever particular element should be visible, it toggles a bool
+attribute `router-visible`. You can implement actual hiding anyway you want:
 
 	<style>
 		fnx-router:not([router-visible]) {
@@ -128,7 +134,11 @@ should be provided via parameters.
 
 You still cannot render `href="#/my/hardwired/route;{{currentValueOfPI}};another-parameter"`, but you can use additional `data-router` attributes:
 
-	<a href="#" data-router="#/my/hardwired/route" data-router-param1="{{currentValueOfPI}}" data-router-param2="another-parameter">go for PI</a>
+	<a href="#"
+		data-router="#/my/hardwired/route"
+		data-router-param1="{{currentValueOfPI}}"
+		data-router-param2="another-parameter"
+		>go for PI</a>
 
 ## Using router in your elements
 
@@ -152,15 +162,23 @@ And add a callback for visibility changes:
 		if (visible) { foo(); } else { bar(); }
 	}
 	
-For example, `fnx-router` element does this:
+For example, `fnx-router` element looks like this:
 
-    if (visible) {
-      toggleAttribute("router-visible", true);
-    } else {
-      toggleAttribute("router-visible", false);
+    @PolymerRegister("fnx-router")
+    class FnxRouter extends PolymerElement with FnxRouterBehavior {
+    
+      FnxRouter.created() : super.created();
+    
+      void routeChanged(bool visible, List<String> params) {
+        if (visible) {
+          toggleAttribute("router-visible", true);
+        } else {
+          toggleAttribute("router-visible", false);
+        }
+    
     }
 
-This callback will be invoked each time when:
+It cannot be easier! `routeChanged` callback will be invoked each time when:
 
 - your element is invisible and should become visible
 - your element is visible and should become invisible
@@ -180,12 +198,19 @@ With `FnxRouterBehavior` your element has access to:
 	
 	// absolute route to parent element (/amazing)
 	@property
-	String fullParentRoute = null;
+	String absoluteParentRoute = null;
 	
 	// absolute route to this element (/amazing/stuff)
 	@property
-	String fullRoute = null;
+	String absoluteRoute = null;
 
 ## Notes, details and TODOs
 
 Routing rules for element are evaluated in `attached()` Polymer lifecycle method and cannot be changed later.
+
+**fnx-router** works only with **shady DOM**.
+
+## Contact
+
+Feel free to contact me at `<user-element>tomucha</user-element><host-element separator="@">gmail.com</host-element>`,
+or fill-in a bugreport on (Github issue tracking)[https://github.com/fnx-io/fnx_router/issues].
