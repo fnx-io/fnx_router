@@ -46,7 +46,15 @@ abstract class FnxRouterBehavior {
 
   FnxRouterBehavior _rootRouter = null;
 
-  void attached() {
+  bool _initialized = false;
+
+  void ready() {
+    _initRouting();
+  }
+
+  void _initRouting() {
+    if (_initialized) return;
+    _initialized = true;
     _log.info("Router node attached to document");
     _parentRouter = findParentRouter((this as Element).parent);
     if (route == null && _parentRouter != null) {
@@ -69,6 +77,7 @@ abstract class FnxRouterBehavior {
     _buildFullRoutes();
     _registerToRootRouter();
     _resolveVisibility(navigator.currentRoute);
+
   }
 
   void _buildFullRoutes() {
@@ -151,6 +160,9 @@ abstract class FnxRouterBehavior {
     if (element is FnxRouterBehavior) {
       FnxRouterBehavior p = element as FnxRouterBehavior;
       if (!p.excludedFromRouting) {
+        if (!p._initialized) {
+          p._initRouting();
+        }
         return p;
       }
     }
