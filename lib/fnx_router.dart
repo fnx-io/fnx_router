@@ -9,7 +9,7 @@ import 'package:fnx_router/fnx_router_behavior.dart';
 @PolymerRegister("fnx-router")
 class FnxRouter extends PolymerElement with FnxRouterBehavior {
 
-  final int MAX_RETRY = 10;
+  // final int MAX_RETRY = 10;
 
   FnxRouter.created() : super.created();
 
@@ -19,6 +19,7 @@ class FnxRouter extends PolymerElement with FnxRouterBehavior {
     } else {
       toggleAttribute("router-visible", false);
     }
+    /*
     if (parent != null && parent.tagName != null) {
       if (
             (parent.tagName.toUpperCase() == "IRON-PAGES") && visible
@@ -31,8 +32,10 @@ class FnxRouter extends PolymerElement with FnxRouterBehavior {
         _openPaperDialog();
       }
     }
+    */
   }
 
+  /*
   int _paper_dialog_retry = 0;
 
   void _openPaperDialog() {
@@ -69,5 +72,6 @@ class FnxRouter extends PolymerElement with FnxRouterBehavior {
       }
     }
   }
+  */
 
 }

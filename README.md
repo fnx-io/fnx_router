@@ -95,11 +95,11 @@ Your `data-router` value must start with either `#/`, `./` or `../`.
 
 You can also change the route programmatically, but more about this later.
 
-# fnx-router element
+## fnx-router element
 
-**fnx_router** package contains `<fnx-router>` element. It is
+**fnx_router** package contains `<fnx-router>` element. It's a
 simple `display: block;` element. You can use it instead of
-your regular `<div>`. It has one special attribute - `route`. When visible, it has a bool
+your regular `<div>`. It has one special attribute - `route`. When element should be visible, it has a bool
 attribute `router-visible` set, so you can implement actual hiding anyway you want:
 
 	<style>
@@ -114,43 +114,78 @@ attribute `router-visible` set, so you can implement actual hiding anyway you wa
 _Note: It's discouraged to remove elements from DOM tree, see
 [polymer-dart wiki](https://github.com/dart-lang/polymer-dart/wiki/data-binding-helper-elements#conditional-templates)_
 
-Routing parameters
-=======================
+## Routing parameters
 
-It would be nice to have routes like this: /user/1234/edit, but in current
-state of Polymer it would be difficult to create such link (Polymer doesn't
+It would be nice to have routes like this: `/user/1234/edit`, but in current
+state of Polymer it would be difficult to create such link. Polymer doesn't
 support expressions at this moment, so you cannot write
-href="/user/{{user.id}}/edit". Because of this, your routes should be
-"hardwired constants" and everything what changes, should be provided via
-parameters.
+`href="/user/{{user.id}}/edit"`.
 
-<a href="#/my/hardwired/route;3.1415;another-parameter">go for PI</a>
+Because of this, your routes should be "hardwired constants" and everything what changes,
+should be provided via parameters.
 
-You still cannot render "#/my/hardwired/route;{{currentValueOfPI}};another-parameter", but you can use additional "data-router" attributes:
+	<a href="#/my/hardwired/route;3.1415;another-parameter">go for PI</a>
 
-<a href="#" data-router="#/my/hardwired/route" data-router-param1="{{currentValueOfPI}}" data-router-param2="another-parameter">go for PI</a>
+You still cannot render `href="#/my/hardwired/route;{{currentValueOfPI}};another-parameter"`, but you can use additional `data-router` attributes:
 
+	<a href="#" data-router="#/my/hardwired/route" data-router-param1="{{currentValueOfPI}}" data-router-param2="another-parameter">go for PI</a>
 
-Using router in your elements
-===========================
+## Using router in your elements
 
-fnx-router element is really just a smarter div. You will probably need to react on routintg events, load data depending on routing parameters etc. Good news - thanks to Polymer behaviors, it's really easy.
+`fnx-router` element is really just a smarter div. You will probably need to listen to routintg events,
+fetch data from API when your element becomes visible etc. Good news - thanks to [Polymer behaviors](https://github.com/dart-lang/polymer-dart/wiki/behaviors),
+it's really easy.
 
-Enhance your element with FnxRouterBehavior and declare attribute "route":
+Enhance your element with `FnxRouterBehavior` like this:
 
 In your template:
-<dom-module id="my-smart-rest-element" attributes="route">
+	<dom-module id="my-smart-rest-element" attributes="route">
 
 In your class:
 
-class My
+	class MySmartRestElement PolymerElement with FnxRouterBehavior {
+	...
+	
+And add a callback for visibility changes:
+	
+	void routeChanged(bool visible, List<String> params) {
+		if (visible) { foo(); } else { bar(); }
+	}
+	
+For example, `fnx-router` element does this:
 
+    if (visible) {
+      toggleAttribute("router-visible", true);
+    } else {
+      toggleAttribute("router-visible", false);
+    }
 
+This callback will be invoked each time when:
 
+- your element is invisible and should become visible
+- your element is visible and should become invisible
+- you element is visible and should stay visible, but params changed (see _Routing parameters_ above)
 
+## API
 
+With `FnxRouterBehavior` your element has access to:
 
+	// current state of visibility
+	@property(notify: true)
+	bool routerVisible = false;
+	
+	// last routing parameters
+	@property(notify: true)
+	List<String> routerParams = [];
+	
+	// absolute route to parent element (/amazing)
+	@property
+	String fullParentRoute = null;
+	
+	// absolute route to this element (/amazing/stuff)
+	@property
+	String fullRoute = null;
 
+## Notes, details and TODOs
 
-
-
+Routing rules for element are evaluated in `attached()` Polymer lifecycle method and cannot be changed later.
