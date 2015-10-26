@@ -140,20 +140,23 @@ You still cannot render `href="#/my/hardwired/route;{{currentValueOfPI}};another
 		data-router-param2="another-parameter"
 		>go for PI</a>
 
+_Note: At this point routing parameters are simply a `List<String>`._
+
 ## Using router in your elements
 
-`fnx-router` element is really just a smarter div. You will probably need to listen to routintg events,
-fetch data from API when your element becomes visible etc. Good news - thanks to [Polymer behaviors](https://github.com/dart-lang/polymer-dart/wiki/behaviors),
+`fnx-router` element is really just a smarter div. You will probably need to fetch data from API
+whenever your element becomes visible etc. Good news - thanks to [Polymer behaviors](https://github.com/dart-lang/polymer-dart/wiki/behaviors),
 it's really easy.
 
 Enhance your element with `FnxRouterBehavior` like this:
 
 In your template:
-	<dom-module id="my-smart-rest-element" attributes="route">
+	
+	<dom-module id="my-smart-rest-element" attributes="route"><!-- new attribute -->
 
 In your class:
 
-	class MySmartRestElement PolymerElement with FnxRouterBehavior {
+	class MySmartRestElement extends PolymerElement with FnxRouterBehavior {
 	...
 	
 And add a callback for visibility changes:
@@ -182,7 +185,7 @@ It cannot be easier! `routeChanged` callback will be invoked each time when:
 
 - your element is invisible and should become visible
 - your element is visible and should become invisible
-- you element is visible and should stay visible, but params changed (see _Routing parameters_ above)
+- your element is visible and should stay visible, but params changed (see _Routing parameters_ above)
 
 ## API
 
@@ -213,4 +216,4 @@ Routing rules for element are evaluated in `attached()` Polymer lifecycle method
 ## Contact
 
 Feel free to contact me at `<user-element>tomucha</user-element><host-element separator="@">gmail.com</host-element>`,
-or fill-in a bugreport on (Github issue tracking)[https://github.com/fnx-io/fnx_router/issues].
+or fill-in a bugreport on [Github issue tracking](https://github.com/fnx-io/fnx_router/issues).

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>fnx_router - Dart API docs</title>
+    <!-- required because all the links are pseudo-absolute -->
+    <base href=".">
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro|Roboto:500,400italic,300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="static-assets/prettify.css">
+    <link rel="stylesheet" href="static-assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static-assets/styles.css">
+
+    <meta name="description" content="fnx_router API docs, for the Dart programming language.">
+    <link rel="icon" href="static-assets/favicon.png">
+
+    <!-- Do not remove placeholder -->
+    <!-- Header Placeholder -->
+</head>
+
+<body>
+
+<div id="overlay-under-drawer"></div>
+
+<header class="container-fluid" id="title">
+    <nav class="navbar navbar-fixed-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 contents">
+              <ol class="breadcrumbs gt-separated hidden-xs">
+                  <li class="self-crumb">fnx_router</li>
+              </ol>
+              <div class="self-name">fnx_router</div>
+              <form class="search navbar-right" role="search">
+                <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+              </form>
+            </div> <!-- /col -->
+          </div> <!-- /row -->
+        </div> <!-- /container -->
+    </nav>
+
+    <div class="container masthead">
+      <div class="row">
+        <div class="col-sm-12 contents">
+          <ol class="breadcrumbs gt-separated visible-xs">
+          </ol>
+          <div class="title-description">
+              <h1 class="title">
+                  <div class="kind">package</div> fnx_router
+              </h1>
+          </div>
+          <ul class="subnav">
+              <li><a href="index.html#libraries">Libraries</a></li>
+          </ul>
+        </div> <!-- /col -->
+      </div> <!-- /row -->
+    </div> <!-- /container -->
+
+</header>
+
+<div class="container body">
+  <div class="row">
+
+  <div class="col-xs-6 col-sm-3 col-md-2 sidebar sidebar-offcanvas-left">
+    <h5>fnx_router</h5>
+
+    <ol>
+      <li class="section-title"><a href="index.html#libraries">Libraries</a></li>
+      <li><a href="fnx_router.behavior/fnx_router.behavior-library.html">fnx_router.behavior</a></li>
+      <li><a href="fnx_router.element/fnx_router.element-library.html">fnx_router.element</a></li>
+    </ol>
+  </div>
+
+  <div class="col-xs-12 col-sm-9 col-md-8 main-content">
+
+      <section class="desc markdown">
+      
+            <h1>fnx_router</h1>
+<p>Declarative hierarchical router for Polymer Dart 1.0. Use it like this:</p>
+<pre><code>&lt;fnx-router&gt;
+	
+	&lt;a href="#/amazing/stuff"&gt;show me amazing stuff&lt;/a&gt;
+	&lt;a href="#/amazing/features"&gt;show me amazing features&lt;/a&gt;
+
+	&lt;fnx-router route="amazing"&gt;
+	
+		&lt;fnx-router route="stuff"&gt;
+			&lt;h1&gt;wow!&lt;/h1&gt;
+		&lt;/fnx-router&gt;
+		
+		&lt;fnx-router route="features"&gt;
+			&lt;h1&gt;no way!&lt;/h1&gt;
+		&lt;/fnx-router&gt;
+		
+		...
+</code></pre>
+<p>Comes in with handy Polymer <code>@bahavior</code> which you can use to make <strong>any of your elements</strong> routing capable.</p>
+<p><em>Note: Work in progress, I'll continue to develop this package as I use it in our Polymer projects.</em></p>
+<h2>Routing</h2>
+<p>The purpose of this package is to allow you to show/hide your elements depending on <code>window.location.hash</code>
+value. Every element <code>with FnxRouterBehavior</code> has <code>route</code> attribute and becomes subject of routing.</p>
+<pre><code>&lt;fnx-router route='user'&gt;
+	&lt;my-cool-element route='edit'&gt;
+		...
+</code></pre>
+<p>Elements create a tree hierarchy of <em>routing nodes</em> (subtree of DOM, if you want).
+Their absolute route depends on route of their parents (and recursively up to the root element).</p>
+<pre><code>&lt;fnx-router&gt; &lt;!-- this is a routing root and it has no
+                  "route" attribute , it will be visible always --&gt;
+                  
+	&lt;fnx-router route="amazing"&gt; &lt;!-- visible on #/amazing --&gt;
+	
+		&lt;fnx-router route="stuff"&gt; &lt;!-- visible on #/amazing/stuff --&gt;
+		
+			&lt;fnx-router route="vol1"&gt; &lt;!-- visible on #/amazing/stuff/vol1 --&gt;
+</code></pre>
+<p>Level separator <code>/</code> is a constant provided by <em>fnx_router</em>.</p>
+<h2>Navigation</h2>
+<p>Your user can navigate through your app by simply changing location anchor:</p>
+<pre><code>&lt;a href="#/amazing/stuff"&gt;show me amazing stuff&lt;/a&gt;
+&lt;a href="#/amazing/features"&gt;show me amazing features&lt;/a&gt;
+</code></pre>
+<p>However - this requires you to know the absolute path (absolute route) to the element,
+which is not very practical - hierarchical routing then loses it's purpose.
+There are several other ways how to navigate.</p>
+<pre><code>&lt;fnx-router&gt;
+	
+	&lt;a href="#" data-router="#/amazing"&gt;open amazing menu&lt;/a&gt;
+
+	&lt;fnx-router route="amazing"&gt;
+		
+		&lt;a href="#" data-router="./stuff"&gt;stuff&lt;/a&gt;
+		
+		&lt;a href="#" data-router="./features"&gt;features&lt;/a&gt;
+		
+		&lt;a href="#" data-router="../regular"&gt;hide amazing, show regular&lt;/a&gt;
+		
+		&lt;fnx-router route="stuff"&gt;
+			&lt;h1&gt;WOW!&lt;/h1&gt;
+		&lt;/fnx-router&gt;
+		
+		&lt;fnx-router route="features"&gt;
+			&lt;h1&gt;NO WAY!&lt;/h1&gt;
+		&lt;/fnx-router&gt;
+		
+	&lt;/fnx-router&gt;
+	
+	&lt;fnx-router route="regular"&gt;
+		This is pretty regular. Go see
+		&lt;a href="#" data-router="../amazing"&gt;something amazing&lt;/a&gt;.			
+	&lt;/fnx-router&gt;
+</code></pre>
+<p>All routing nodes listen for <code>tap</code> event (<code>@Listen("tap")</code>). If the event's target contains <code>data-router</code>
+attribute, tap event is canceled and processed by router (actual <code>href</code> or other default action is ignored).
+Possible values of <code>data-router</code> are:</p><ul><li><code>#/something</code> - absolute path to required element</li><li><code>./something</code> - relative path to this element's child</li><li><code>../something</code> - relative path to this element's siblink (only single '../' is supported for now, you cannot double-dot your path all the way up like '../../')</li></ul>
+<p>Your <code>data-router</code> value must start with either <code>#/</code>, <code>./</code> or <code>../</code>.</p>
+<pre><code>&lt;a href="#" data-router="./baby-boy"&gt;pictures of my boy&lt;/a&gt;	
+&lt;a href="#" data-router="./baby-girl"&gt;pictures of my girl&lt;/a&gt;	
+&lt;a href="#" data-router="../my-dumb-brother"&gt;pictures of my brother&lt;/a&gt;
+</code></pre>
+<p>You can also change the route programmatically, but more about this later.</p>
+<h2>fnx-router element</h2>
+<p><strong>fnx_router</strong> package contains <code>&lt;fnx-router&gt;</code> element. It's a
+simple <code>display: block;</code> element. You can use it instead of
+your regular <code>&lt;div&gt;</code>. It has one special attribute - <code>route</code>. Whenever particular element should be visible, it toggles a bool
+attribute <code>router-visible</code>. You can implement actual hiding anyway you want:</p>
+<pre><code>&lt;style&gt;
+	fnx-router:not([router-visible]) {
+		display: none;
+	}
+	.show-ghosts fnx-router:not([router-visible]) {
+		opacity: 0.2;
+	}	
+&lt;/style&gt;
+</code></pre>
+<p><em>Note: It's discouraged to remove elements from DOM tree, see
+<a href="https://github.com/dart-lang/polymer-dart/wiki/data-binding-helper-elements#conditional-templates">polymer-dart wiki</a></em></p>
+<h2>Routing parameters</h2>
+<p>It would be nice to have routes like this: <code>/user/1234/edit</code>, but in current
+state of Polymer it would be difficult to create such link. Polymer doesn't
+support expressions at this moment, so you cannot write
+<code>href="/user/{{user.id}}/edit"</code>.</p>
+<p>Because of this, your routes should be "hardwired constants" and everything what changes,
+should be provided via parameters.</p>
+<pre><code>&lt;a href="#/my/hardwired/route;3.1415;another-parameter"&gt;go for PI&lt;/a&gt;
+</code></pre>
+<p>You still cannot render <code>href="#/my/hardwired/route;{{currentValueOfPI}};another-parameter"</code>, but you can use additional <code>data-router</code> attributes:</p>
+<pre><code>&lt;a href="#"
+	data-router="#/my/hardwired/route"
+	data-router-param1="{{currentValueOfPI}}"
+	data-router-param2="another-parameter"
+	&gt;go for PI&lt;/a&gt;
+</code></pre>
+<p><em>Note: At this point routing parameters are simply a <code>List&lt;String&gt;</code>.</em></p>
+<h2>Using router in your elements</h2>
+<p><code>fnx-router</code> element is really just a smarter div. You will probably need to fetch data from API
+whenever your element becomes visible etc. Good news - thanks to <a href="https://github.com/dart-lang/polymer-dart/wiki/behaviors">Polymer behaviors</a>,
+it's really easy.</p>
+<p>Enhance your element with <code>FnxRouterBehavior</code> like this:</p>
+<p>In your template:</p>
+<pre><code>&lt;dom-module id="my-smart-rest-element" attributes="route"&gt;&lt;!-- new attribute --&gt;
+</code></pre>
+<p>In your class:</p>
+<pre><code>class MySmartRestElement extends PolymerElement with FnxRouterBehavior {
+...
+
+</code></pre>
+<p>And add a callback for visibility changes:</p>
+<pre><code>void routeChanged(bool visible, List&lt;String&gt; params) {
+	if (visible) { foo(); } else { bar(); }
+}
+
+</code></pre>
+<p>For example, <code>fnx-router</code> element looks like this:</p>
+<pre><code>@PolymerRegister("fnx-router")
+class FnxRouter extends PolymerElement with FnxRouterBehavior {
+
+  FnxRouter.created() : super.created();
+
+  void routeChanged(bool visible, List&lt;String&gt; params) {
+    if (visible) {
+      toggleAttribute("router-visible", true);
+    } else {
+      toggleAttribute("router-visible", false);
+    }
+
+}
+</code></pre>
+<p>It cannot be easier! <code>routeChanged</code> callback will be invoked each time when:</p><ul><li>your element is invisible and should become visible</li><li>your element is visible and should become invisible</li><li>your element is visible and should stay visible, but params changed (see <em>Routing parameters</em> above)</li></ul>
+<h2>API</h2>
+<p>With <code>FnxRouterBehavior</code> your element has access to:</p>
+<pre><code>// current state of visibility
+@property(notify: true)
+bool routerVisible = false;
+
+// last routing parameters
+@property(notify: true)
+List&lt;String&gt; routerParams = [];
+
+// absolute route to parent element (/amazing)
+@property
+String absoluteParentRoute = null;
+
+// absolute route to this element (/amazing/stuff)
+@property
+String absoluteRoute = null;
+</code></pre>
+<h2>Notes, details and TODOs</h2>
+<p>Routing rules for element are evaluated in <code>attached()</code> Polymer lifecycle method and cannot be changed later.</p>
+<p><strong>fnx-router</strong> works only with <strong>shady DOM</strong>.</p>
+<h2>Contact</h2>
+<p>Feel free to contact me at <code>&lt;user-element&gt;tomucha&lt;/user-element&gt;&lt;host-element separator="@"&gt;gmail.com&lt;/host-element&gt;</code>,
+or fill-in a bugreport on <a href="https://github.com/fnx-io/fnx_router/issues">Github issue tracking</a>.</p>
+      
+      </section>
+
+    <section class="summary" id="libraries">
+      <h2>Libraries</h2>
+      <dl>
+          <dt id="fnx_router.behavior">
+            <span class="name "><a href="fnx_router.behavior/fnx_router.behavior-library.html">fnx_router.behavior</a></span>
+          </dt>
+          <dd>
+            
+            <p>
+              Routing behavior for Polymer elements.
+              <a href="fnx_router.behavior/fnx_router.behavior-library.html">&hellip;</a>
+                          </p>
+          </dd>
+          <dt id="fnx_router.element">
+            <span class="name "><a href="fnx_router.element/fnx_router.element-library.html">fnx_router.element</a></span>
+          </dt>
+          <dd>
+            
+            <p>
+              Simple element with <a href="fnx_router.behavior/FnxRouterBehavior-class.html">FnxRouterBehavior</a>.
+                          </p>
+          </dd>
+      </dl>
+    </section>
+
+  </div> <!-- /.main-content -->
+
+  <div class="col-xs-6 col-sm-6 col-md-2 sidebar sidebar-offcanvas-right">
+
+  </div><!--/.sidebar-offcanvas-right-->
+
+  </div> <!-- row -->
+</div> <!-- container -->
+
+<footer>
+    <div class="container-fluid">
+        <div class="container">
+            <p class="text-center">
+                <span class="no-break">
+                  fnx_router 0.1.0 api docs
+                </span>
+                &bull;
+                <span class="copyright no-break">
+                  <a href="https://www.dartlang.org">
+                    <img src="static-assets/favicon.png" alt="Dart" title="Dart"width="16" height="16">
+                  </a>
+                </span>
+                &bull;
+                <span class="copyright no-break">
+                  <a href="http://creativecommons.org/licenses/by-sa/4.0/">cc license</a>
+                </span>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="static-assets/typeahead.bundle.min.js"></script>
+<script src="static-assets/prettify.js"></script>
+<script src="static-assets/script.js"></script>
+<!-- Do not remove placeholder -->
+<!-- Footer Placeholder -->
+
+<!-- Made with <3 by dartdoc version 0.6.0+1 -->
+</body>
+
+</html>

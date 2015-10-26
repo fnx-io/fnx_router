@@ -10,7 +10,7 @@ import 'package:fnx_router/fnx_router_behavior.dart';
 main() async {
 
   FnxRouterNavigator navigator = new _FnxRouterTestNavigator();
-  configureRouterNavigator(navigator);
+  testConfigureRouterNavigator(navigator);
 
   Logger.root.level = Level.INFO;
   Logger.root.onRecord.listen((LogRecord rec) {

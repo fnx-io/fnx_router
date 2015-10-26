@@ -1,0 +1,2992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FnxRouter class - fnx_router.lib.fnx_router library - Dart API</title>
+    <!-- required because all the links are pseudo-absolute -->
+    <base href="..">
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro|Roboto:500,400italic,300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="static-assets/prettify.css">
+    <link rel="stylesheet" href="static-assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static-assets/styles.css">
+
+    <meta name="description" content="API docs for the FnxRouter class from the fnx_router.lib.fnx_router library, for the Dart programming language.">
+    <link rel="icon" href="static-assets/favicon.png">
+
+    <!-- Do not remove placeholder -->
+    <!-- Header Placeholder -->
+</head>
+
+<body>
+
+<div id="overlay-under-drawer"></div>
+
+<header class="container-fluid" id="title">
+    <nav class="navbar navbar-fixed-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 contents">
+              <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+              <ol class="breadcrumbs gt-separated hidden-xs">
+                  <li><a href="index.html">fnx_router</a></li>
+                  <li><a href="fnx_router.lib.fnx_router/fnx_router.lib.fnx_router-library.html">fnx_router.lib.fnx_router</a></li>
+                  <li class="self-crumb">FnxRouter</li>
+              </ol>
+              <div class="self-name">FnxRouter</div>
+              <form class="search navbar-right" role="search">
+                <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+              </form>
+            </div> <!-- /col -->
+          </div> <!-- /row -->
+        </div> <!-- /container -->
+    </nav>
+
+    <div class="container masthead">
+      <div class="row">
+        <div class="col-sm-12 contents">
+          <ol class="breadcrumbs gt-separated visible-xs">
+              <li><a href="index.html">fnx_router</a></li>
+              <li><a href="fnx_router.lib.fnx_router/fnx_router.lib.fnx_router-library.html">fnx_router.lib.fnx_router</a></li>
+              <li class="self-crumb">FnxRouter</li>
+          </ol>
+          <div class="title-description">
+              <h1 class="title">
+                  <div class="kind">class</div> FnxRouter
+              </h1>
+          </div>
+          <ul class="subnav">
+              <li><a href="fnx_router.lib.fnx_router/FnxRouter-class.html#constructors">Constructors</a></li>
+              <li><a href="fnx_router.lib.fnx_router/FnxRouter-class.html#instance-methods">Methods</a></li>
+          </ul>
+        </div> <!-- /col -->
+      </div> <!-- /row -->
+    </div> <!-- /container -->
+
+</header>
+
+<div class="container body">
+  <div class="row">
+
+  <div class="col-xs-6 col-sm-3 col-md-2 sidebar sidebar-offcanvas-left">
+    <h5><a href="index.html">fnx_router</a></h5>
+    <h5><a href="fnx_router.lib.fnx_router/fnx_router.lib.fnx_router-library.html">fnx_router.lib.fnx_router</a></h5>
+
+    <ol>
+    
+    
+    
+    
+    
+      <li class="section-title"><a href="fnx_router.lib.fnx_router/fnx_router.lib.fnx_router-library.html#classes">Classes</a></li>
+      <li><a href="fnx_router.lib.fnx_router/FnxRouter-class.html">FnxRouter</a></li>
+    
+    </ol>
+  </div>
+
+  <div class="col-xs-12 col-sm-9 col-md-8 main-content">
+
+    <section class="desc markdown">
+    
+          <p class="no-docs">Not documented.</p>
+    
+    </section>
+
+    <section>
+        <dl class="dl-horizontal">
+          <dt>Inheritance</dt>
+          <dd><ul class="gt-separated dark clazz-relationships">
+              <li>Object</li>
+              <li>EventTarget</li>
+              <li>Node</li>
+              <li>Element</li>
+              <li>HtmlElement</li>
+              <li>PolymerElement</li>
+              <li>FnxRouter</li>
+          </ul></dd>
+
+
+          <dt>Mixes-in</dt>
+          <dd><ul class="comma-separated clazz-relationships">
+              <li><a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior-class.html">FnxRouterBehavior</a></li>
+          </ul></dd>
+
+
+          <dt>Annotations</dt>
+          <dd><ul class="annotation-list clazz-relationships">
+              <li>PolymerRegister("fnx-router")</li>
+          </ul></dd>
+        </dl>
+    </section>
+
+
+
+
+    <section class="summary offset-anchor" id="instance-properties">
+        <h2>Properties</h2>
+
+        <dl class="properties">
+            <dt id="$" class="property">
+            <span class="name ">$</span>    
+                <span class="signature">&#8594; JsObject</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>The underlying Js Element's <code>$</code> property.</p>
+            </dd>
+            <dt id="absoluteParentRoute" class="property">
+            <span class="name ">absoluteParentRoute</span>    
+                <span class="signature">&#8594; String</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write, inherited
+    </div>
+    <p>Absolute route of parent</p>
+            </dd>
+            <dt id="absoluteRoute" class="property">
+            <span class="name ">absoluteRoute</span>    
+                <span class="signature">&#8594; String</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write, inherited
+    </div>
+    <p>Absolute route calculated from parent</p>
+            </dd>
+            <dt id="attributes" class="property">
+            <span class="name ">attributes</span>    
+                <span class="signature">&#8594; Map&lt;String,String&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write, inherited
+    </div>
+    <p>All attributes on this element.</p>
+            </dd>
+            <dt id="baseUri" class="property">
+            <span class="name ">baseUri</span>    
+                <span class="signature">&#8594; String</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="behaviors" class="property">
+            <span class="name ">behaviors</span>    
+                <span class="signature">&#8594; JsArray&lt;JsObject&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>The underlying behaviors list created for this element.</p>
+            </dd>
+            <dt id="borderEdge" class="property">
+            <span class="name ">borderEdge</span>    
+                <span class="signature">&#8594; CssRect</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>Access the dimensions and position of this element's content + padding +
+border box.</p>
+            </dd>
+            <dt id="childNodes" class="property">
+            <span class="name ">childNodes</span>    
+                <span class="signature">&#8594; List&lt;Node&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>A list of this node's children.</p>
+            </dd>
+            <dt id="children" class="property">
+            <span class="name ">children</span>    
+                <span class="signature">&#8594; List&lt;Element&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write, inherited
+    </div>
+    <p>List of the direct children of this element.</p>
+            </dd>
+            <dt id="classes" class="property">
+            <span class="name ">classes</span>    
+                <span class="signature">&#8594; CssClassSet</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write, inherited
+    </div>
+    <p>The set of CSS classes applied to this element.</p>
+            </dd>
+            <dt id="className" class="property">
+            <span class="name ">className</span>    
+                <span class="signature">&#8594; String</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="client" class="property">
+            <span class="name ">client</span>    
+                <span class="signature">&#8594; Rectangle</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>Gets the position of this element relative to the client area of the page.</p>
+            </dd>
+            <dt id="clientHeight" class="property">
+            <span class="name ">clientHeight</span>    
+                <span class="signature">&#8594; int</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="clientLeft" class="property">
+            <span class="name ">clientLeft</span>    
+                <span class="signature">&#8594; int</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="clientTop" class="property">
+            <span class="name ">clientTop</span>    
+                <span class="signature">&#8594; int</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="clientWidth" class="property">
+            <span class="name ">clientWidth</span>    
+                <span class="signature">&#8594; int</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="contentEdge" class="property">
+            <span class="name ">contentEdge</span>    
+                <span class="signature">&#8594; CssRect</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>Access this element's content position.</p>
+            </dd>
+            <dt id="contentEditable" class="property">
+            <span class="name ">contentEditable</span>    
+                <span class="signature">&#8594; String</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="contextMenu" class="property">
+            <span class="name ">contextMenu</span>    
+                <span class="signature">&#8594; MenuElement</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="customStyle" class="property">
+            <span class="name ">customStyle</span>    
+                <span class="signature">&#8594; JsObject</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="dataset" class="property">
+            <span class="name ">dataset</span>    
+                <span class="signature">&#8594; Map&lt;String,String&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write, inherited
+    </div>
+    <p>Allows access to all custom data attributes (data-*) set on this element.</p>
+            </dd>
+            <dt id="dir" class="property">
+            <span class="name ">dir</span>    
+                <span class="signature">&#8594; String</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="documentOffset" class="property">
+            <span class="name ">documentOffset</span>    
+                <span class="signature">&#8594; Point</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>Provides the coordinates of the element relative to the top of the
+document.</p>
+            </dd>
+            <dt id="domHost" class="property">
+            <span class="name ">domHost</span>    
+                <span class="signature">&#8594; Element</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>Return the element whose local dom within which this element is contained.
+This is a shorthand for Polymer.dom(this).getOwnerRoot().host.</p>
+            </dd>
+            <dt id="draggable" class="property">
+            <span class="name ">draggable</span>    
+                <span class="signature">&#8594; bool</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="dropzone" class="property">
+            <span class="name ">dropzone</span>    
+                <span class="signature">&#8594; String</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="firstChild" class="property">
+            <span class="name ">firstChild</span>    
+                <span class="signature">&#8594; Node</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>The first child of this node.</p>
+            </dd>
+            <dt id="hidden" class="property">
+            <span class="name ">hidden</span>    
+                <span class="signature">&#8594; bool</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="id" class="property">
+            <span class="name ">id</span>    
+                <span class="signature">&#8594; String</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="innerHtml" class="property">
+            <span class="name ">innerHtml</span>    
+                <span class="signature">&#8594; String</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write, inherited
+    </div>
+    <p>Parses the HTML fragment and sets it as the contents of this element.</p>
+            </dd>
+            <dt id="inputMethodContext" class="property">
+            <span class="name ">inputMethodContext</span>    
+                <span class="signature">&#8594; InputMethodContext</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="isContentEditable" class="property">
+            <span class="name ">isContentEditable</span>    
+                <span class="signature">&#8594; bool</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="jsElement" class="property">
+            <span class="name ">jsElement</span>    
+                <span class="signature">&#8594; JsObject</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="lang" class="property">
+            <span class="name ">lang</span>    
+                <span class="signature">&#8594; String</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="lastChild" class="property">
+            <span class="name ">lastChild</span>    
+                <span class="signature">&#8594; Node</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>The last child of this node.</p>
+            </dd>
+            <dt id="listeners" class="property">
+            <span class="name ">listeners</span>    
+                <span class="signature">&#8594; JsObject</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>The underlying listeners object created for this element.</p>
+            </dd>
+            <dt id="localName" class="property">
+            <span class="name ">localName</span>    
+                <span class="signature">&#8594; String</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="marginEdge" class="property">
+            <span class="name ">marginEdge</span>    
+                <span class="signature">&#8594; CssRect</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>Access the dimensions and position of this element's content + padding +
+border + margin box.</p>
+            </dd>
+            <dt id="namespaceUri" class="property">
+            <span class="name ">namespaceUri</span>    
+                <span class="signature">&#8594; String</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>A URI that identifies the XML namespace of this element.</p>
+            </dd>
+            <dt id="navigator" class="property">
+            <span class="name ">navigator</span>    
+                <span class="signature">&#8594; <a href="fnx_router.lib.fnx_router_behavior/FnxRouterNavigator-class.html">FnxRouterNavigator</a></span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="nextElementSibling" class="property">
+            <span class="name ">nextElementSibling</span>    
+                <span class="signature">&#8594; Element</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="nextNode" class="property">
+            <span class="name ">nextNode</span>    
+                <span class="signature">&#8594; Node</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>The next sibling node.</p>
+            </dd>
+            <dt id="nodeName" class="property">
+            <span class="name ">nodeName</span>    
+                <span class="signature">&#8594; String</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>The name of this node.</p>
+            </dd>
+            <dt id="nodes" class="property">
+            <span class="name ">nodes</span>    
+                <span class="signature">&#8594; List&lt;Node&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write, inherited
+    </div>
+    <p>A modifiable list of this node's children.</p>
+            </dd>
+            <dt id="nodeType" class="property">
+            <span class="name ">nodeType</span>    
+                <span class="signature">&#8594; int</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>The type of node.</p>
+            </dd>
+            <dt id="nodeValue" class="property">
+            <span class="name ">nodeValue</span>    
+                <span class="signature">&#8594; String</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>The value of this node.</p>
+            </dd>
+            <dt id="offset" class="property">
+            <span class="name ">offset</span>    
+                <span class="signature">&#8594; Rectangle</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>Gets the offset of this element relative to its offsetParent.</p>
+            </dd>
+            <dt id="offsetHeight" class="property">
+            <span class="name ">offsetHeight</span>    
+                <span class="signature">&#8594; int</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="offsetLeft" class="property">
+            <span class="name ">offsetLeft</span>    
+                <span class="signature">&#8594; int</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="offsetParent" class="property">
+            <span class="name ">offsetParent</span>    
+                <span class="signature">&#8594; Element</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="offsetTop" class="property">
+            <span class="name ">offsetTop</span>    
+                <span class="signature">&#8594; int</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="offsetWidth" class="property">
+            <span class="name ">offsetWidth</span>    
+                <span class="signature">&#8594; int</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="on" class="property">
+            <span class="name ">on</span>    
+                <span class="signature">&#8594; ElementEvents</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>This is an ease-of-use accessor for event streams which should only be
+used when an explicit accessor is not available.</p>
+            </dd>
+            <dt id="onAbort" class="property">
+            <span class="name ">onAbort</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onBeforeCopy" class="property">
+            <span class="name ">onBeforeCopy</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>Stream of <code>beforecopy</code> events handled by this <code>Element</code>.</p>
+            </dd>
+            <dt id="onBeforeCut" class="property">
+            <span class="name ">onBeforeCut</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>Stream of <code>beforecut</code> events handled by this <code>Element</code>.</p>
+            </dd>
+            <dt id="onBeforePaste" class="property">
+            <span class="name ">onBeforePaste</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>Stream of <code>beforepaste</code> events handled by this <code>Element</code>.</p>
+            </dd>
+            <dt id="onBlur" class="property">
+            <span class="name ">onBlur</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onCanPlay" class="property">
+            <span class="name ">onCanPlay</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onCanPlayThrough" class="property">
+            <span class="name ">onCanPlayThrough</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onChange" class="property">
+            <span class="name ">onChange</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onClick" class="property">
+            <span class="name ">onClick</span>    
+                <span class="signature">&#8594; ElementStream&lt;MouseEvent&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onContextMenu" class="property">
+            <span class="name ">onContextMenu</span>    
+                <span class="signature">&#8594; ElementStream&lt;MouseEvent&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onCopy" class="property">
+            <span class="name ">onCopy</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>Stream of <code>copy</code> events handled by this <code>Element</code>.</p>
+            </dd>
+            <dt id="onCut" class="property">
+            <span class="name ">onCut</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>Stream of <code>cut</code> events handled by this <code>Element</code>.</p>
+            </dd>
+            <dt id="onDoubleClick" class="property">
+            <span class="name ">onDoubleClick</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onDrag" class="property">
+            <span class="name ">onDrag</span>    
+                <span class="signature">&#8594; ElementStream&lt;MouseEvent&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onDragEnd" class="property">
+            <span class="name ">onDragEnd</span>    
+                <span class="signature">&#8594; ElementStream&lt;MouseEvent&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onDragEnter" class="property">
+            <span class="name ">onDragEnter</span>    
+                <span class="signature">&#8594; ElementStream&lt;MouseEvent&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onDragLeave" class="property">
+            <span class="name ">onDragLeave</span>    
+                <span class="signature">&#8594; ElementStream&lt;MouseEvent&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onDragOver" class="property">
+            <span class="name ">onDragOver</span>    
+                <span class="signature">&#8594; ElementStream&lt;MouseEvent&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onDragStart" class="property">
+            <span class="name ">onDragStart</span>    
+                <span class="signature">&#8594; ElementStream&lt;MouseEvent&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onDrop" class="property">
+            <span class="name ">onDrop</span>    
+                <span class="signature">&#8594; ElementStream&lt;MouseEvent&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onDurationChange" class="property">
+            <span class="name ">onDurationChange</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onEmptied" class="property">
+            <span class="name ">onEmptied</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onEnded" class="property">
+            <span class="name ">onEnded</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onError" class="property">
+            <span class="name ">onError</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onFocus" class="property">
+            <span class="name ">onFocus</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onFullscreenChange" class="property">
+            <span class="name ">onFullscreenChange</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>Stream of <code>fullscreenchange</code> events handled by this <code>Element</code>.</p>
+            </dd>
+            <dt id="onFullscreenError" class="property">
+            <span class="name ">onFullscreenError</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>Stream of <code>fullscreenerror</code> events handled by this <code>Element</code>.</p>
+            </dd>
+            <dt id="onInput" class="property">
+            <span class="name ">onInput</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onInvalid" class="property">
+            <span class="name ">onInvalid</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onKeyDown" class="property">
+            <span class="name ">onKeyDown</span>    
+                <span class="signature">&#8594; ElementStream&lt;KeyboardEvent&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onKeyPress" class="property">
+            <span class="name ">onKeyPress</span>    
+                <span class="signature">&#8594; ElementStream&lt;KeyboardEvent&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onKeyUp" class="property">
+            <span class="name ">onKeyUp</span>    
+                <span class="signature">&#8594; ElementStream&lt;KeyboardEvent&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onLoad" class="property">
+            <span class="name ">onLoad</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onLoadedData" class="property">
+            <span class="name ">onLoadedData</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onLoadedMetadata" class="property">
+            <span class="name ">onLoadedMetadata</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onMouseDown" class="property">
+            <span class="name ">onMouseDown</span>    
+                <span class="signature">&#8594; ElementStream&lt;MouseEvent&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onMouseEnter" class="property">
+            <span class="name ">onMouseEnter</span>    
+                <span class="signature">&#8594; ElementStream&lt;MouseEvent&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onMouseLeave" class="property">
+            <span class="name ">onMouseLeave</span>    
+                <span class="signature">&#8594; ElementStream&lt;MouseEvent&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onMouseMove" class="property">
+            <span class="name ">onMouseMove</span>    
+                <span class="signature">&#8594; ElementStream&lt;MouseEvent&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onMouseOut" class="property">
+            <span class="name ">onMouseOut</span>    
+                <span class="signature">&#8594; ElementStream&lt;MouseEvent&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onMouseOver" class="property">
+            <span class="name ">onMouseOver</span>    
+                <span class="signature">&#8594; ElementStream&lt;MouseEvent&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onMouseUp" class="property">
+            <span class="name ">onMouseUp</span>    
+                <span class="signature">&#8594; ElementStream&lt;MouseEvent&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onMouseWheel" class="property">
+            <span class="name ">onMouseWheel</span>    
+                <span class="signature">&#8594; ElementStream&lt;WheelEvent&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onPaste" class="property">
+            <span class="name ">onPaste</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>Stream of <code>paste</code> events handled by this <code>Element</code>.</p>
+            </dd>
+            <dt id="onPause" class="property">
+            <span class="name ">onPause</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onPlay" class="property">
+            <span class="name ">onPlay</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onPlaying" class="property">
+            <span class="name ">onPlaying</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onRateChange" class="property">
+            <span class="name ">onRateChange</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onReset" class="property">
+            <span class="name ">onReset</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onResize" class="property">
+            <span class="name ">onResize</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onScroll" class="property">
+            <span class="name ">onScroll</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onSearch" class="property">
+            <span class="name ">onSearch</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>Stream of <code>search</code> events handled by this <code>Element</code>.</p>
+            </dd>
+            <dt id="onSeeked" class="property">
+            <span class="name ">onSeeked</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onSeeking" class="property">
+            <span class="name ">onSeeking</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onSelect" class="property">
+            <span class="name ">onSelect</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onSelectStart" class="property">
+            <span class="name ">onSelectStart</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>Stream of <code>selectstart</code> events handled by this <code>Element</code>.</p>
+            </dd>
+            <dt id="onStalled" class="property">
+            <span class="name ">onStalled</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onSubmit" class="property">
+            <span class="name ">onSubmit</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onSuspend" class="property">
+            <span class="name ">onSuspend</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onTimeUpdate" class="property">
+            <span class="name ">onTimeUpdate</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onTouchCancel" class="property">
+            <span class="name ">onTouchCancel</span>    
+                <span class="signature">&#8594; ElementStream&lt;TouchEvent&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>Stream of <code>touchcancel</code> events handled by this <code>Element</code>.</p>
+            </dd>
+            <dt id="onTouchEnd" class="property">
+            <span class="name ">onTouchEnd</span>    
+                <span class="signature">&#8594; ElementStream&lt;TouchEvent&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>Stream of <code>touchend</code> events handled by this <code>Element</code>.</p>
+            </dd>
+            <dt id="onTouchEnter" class="property">
+            <span class="name ">onTouchEnter</span>    
+                <span class="signature">&#8594; ElementStream&lt;TouchEvent&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>Stream of <code>touchenter</code> events handled by this <code>Element</code>.</p>
+            </dd>
+            <dt id="onTouchLeave" class="property">
+            <span class="name ">onTouchLeave</span>    
+                <span class="signature">&#8594; ElementStream&lt;TouchEvent&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>Stream of <code>touchleave</code> events handled by this <code>Element</code>.</p>
+            </dd>
+            <dt id="onTouchMove" class="property">
+            <span class="name ">onTouchMove</span>    
+                <span class="signature">&#8594; ElementStream&lt;TouchEvent&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>Stream of <code>touchmove</code> events handled by this <code>Element</code>.</p>
+            </dd>
+            <dt id="onTouchStart" class="property">
+            <span class="name ">onTouchStart</span>    
+                <span class="signature">&#8594; ElementStream&lt;TouchEvent&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>Stream of <code>touchstart</code> events handled by this <code>Element</code>.</p>
+            </dd>
+            <dt id="onTransitionEnd" class="property">
+            <span class="name ">onTransitionEnd</span>    
+                <span class="signature">&#8594; ElementStream&lt;TransitionEvent&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>Stream of <code>transitionend</code> events handled by this <code>Element</code>.</p>
+            </dd>
+            <dt id="onVolumeChange" class="property">
+            <span class="name ">onVolumeChange</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="onWaiting" class="property">
+            <span class="name ">onWaiting</span>    
+                <span class="signature">&#8594; ElementStream&lt;Event&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="outerHtml" class="property">
+            <span class="name ">outerHtml</span>    
+                <span class="signature">&#8594; String</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="ownerDocument" class="property">
+            <span class="name ">ownerDocument</span>    
+                <span class="signature">&#8594; Document</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>The document this node belongs to.</p>
+            </dd>
+            <dt id="paddingEdge" class="property">
+            <span class="name ">paddingEdge</span>    
+                <span class="signature">&#8594; CssRect</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>Access the dimensions and position of this element's content + padding box.</p>
+            </dd>
+            <dt id="parent" class="property">
+            <span class="name ">parent</span>    
+                <span class="signature">&#8594; Element</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>The parent element of this node.</p>
+            </dd>
+            <dt id="parentNode" class="property">
+            <span class="name ">parentNode</span>    
+                <span class="signature">&#8594; Node</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>The parent node of this node.</p>
+            </dd>
+            <dt id="previousElementSibling" class="property">
+            <span class="name ">previousElementSibling</span>    
+                <span class="signature">&#8594; Element</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="previousNode" class="property">
+            <span class="name ">previousNode</span>    
+                <span class="signature">&#8594; Node</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>The previous sibling node.</p>
+            </dd>
+            <dt id="properties" class="property">
+            <span class="name ">properties</span>    
+                <span class="signature">&#8594; JsObject</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>The underlying properties object created for this element.</p>
+            </dd>
+            <dt id="root" class="property">
+            <span class="name ">root</span>    
+                <span class="signature">&#8594; Node</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p>The shady or shadow root for this element.</p>
+            </dd>
+            <dt id="route" class="property">
+            <span class="name ">route</span>    
+                <span class="signature">&#8594; String</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write, inherited
+    </div>
+    <p>Relative route provided from mark-up</p>
+            </dd>
+            <dt id="routerParams" class="property">
+            <span class="name ">routerParams</span>    
+                <span class="signature">&#8594; List&lt;String&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write, inherited
+    </div>
+    <p>Current router parameters</p>
+            </dd>
+            <dt id="routerVisible" class="property">
+            <span class="name ">routerVisible</span>    
+                <span class="signature">&#8594; bool</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write, inherited
+    </div>
+    <p>Current state of element</p>
+            </dd>
+            <dt id="scrollHeight" class="property">
+            <span class="name ">scrollHeight</span>    
+                <span class="signature">&#8594; int</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="scrollLeft" class="property">
+            <span class="name ">scrollLeft</span>    
+                <span class="signature">&#8594; int</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="scrollTop" class="property">
+            <span class="name ">scrollTop</span>    
+                <span class="signature">&#8594; int</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="scrollWidth" class="property">
+            <span class="name ">scrollWidth</span>    
+                <span class="signature">&#8594; int</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="shadowRoot" class="property">
+            <span class="name ">shadowRoot</span>    
+                <span class="signature">&#8594; ShadowRoot</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="spellcheck" class="property">
+            <span class="name ">spellcheck</span>    
+                <span class="signature">&#8594; bool</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="style" class="property">
+            <span class="name ">style</span>    
+                <span class="signature">&#8594; CssStyleDeclaration</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="tabIndex" class="property">
+            <span class="name ">tabIndex</span>    
+                <span class="signature">&#8594; int</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="tagName" class="property">
+            <span class="name ">tagName</span>    
+                <span class="signature">&#8594; String</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read-only, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="text" class="property">
+            <span class="name ">text</span>    
+                <span class="signature">&#8594; String</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write, inherited
+    </div>
+    <p>All text within this node and its decendents.</p>
+            </dd>
+            <dt id="title" class="property">
+            <span class="name ">title</span>    
+                <span class="signature">&#8594; String</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="translate" class="property">
+            <span class="name ">translate</span>    
+                <span class="signature">&#8594; bool</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write, inherited
+    </div>
+    <p></p>
+            </dd>
+            <dt id="xtag" class="property">
+            <span class="name ">xtag</span>    
+                <span class="signature">&#8594; dynamic</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write, inherited
+    </div>
+    <p>Experimental support for <a href="http://dvcs.w3.org/hg/webcomponents/raw-file/tip/explainer/index.html">web components</a>. This field stores a
+reference to the component implementation. It was inspired by Mozilla's
+<a href="http://x-tags.org/">x-tags</a> project. Please note: in the future it may be possible to
+<code>extend Element</code> from your class, in which case this field will be
+deprecated.</p>
+            </dd>
+        </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="constructors">
+        <h2>Constructors</h2>
+
+        <dl class="constructor-summary-list">
+            <dt id="FnxRouter.created" class="callable">
+                <span class="name"><a href="fnx_router.lib.fnx_router/FnxRouter/FnxRouter.created.html">FnxRouter.created</a></span><span class="signature">()</span>
+            </dt>
+            <dd>
+                <p></p>
+            </dd>
+        </dl>
+      </section>
+
+
+      <section class="summary offset-anchor" id="instance-methods">
+          <h2>Methods</h2>
+          <dl class="callables">
+              <dt id="$$" class="callable">
+                  <span class="name ">$$</span><span class="signature">(<wbr><span class="parameter" id="$$-param-selector"><span class="type-annotation">String</span> <span class="parameter-name">selector</span></span>)
+                      &#8594;
+                      <span class="returntype">Element</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Convenience method to run querySelector on this local DOM scope.
+This function calls Polymer.dom(this.root).querySelector(slctr).</p>
+              </dd>
+              <dt id="add" class="callable">
+                  <span class="name ">add</span><span class="signature">(<wbr><span class="parameter" id="add-param-path"><span class="type-annotation">String</span> <span class="parameter-name">path</span></span>, <span class="parameter" id="add-param-item"><span class="parameter-name">item</span></span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Add <code>item</code> to a list at <code>path</code>.</p>
+              </dd>
+              <dt id="addAll" class="callable">
+                  <span class="name ">addAll</span><span class="signature">(<wbr><span class="parameter" id="addAll-param-path"><span class="type-annotation">String</span> <span class="parameter-name">path</span></span>, <span class="parameter" id="addAll-param-items"><span class="type-annotation">Iterable</span> <span class="parameter-name">items</span></span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Add <code>items</code> to a list at <code>path</code>.</p>
+              </dd>
+              <dt id="addEventListener" class="callable">
+                  <span class="name ">addEventListener</span><span class="signature">(<wbr><span class="parameter" id="addEventListener-param-type"><span class="type-annotation">String</span> <span class="parameter-name">type</span></span>, <span class="parameter" id="addEventListener-param-listener"><span class="type-annotation">dynamic</span> <span class="parameter-name">listener</span>(<span class="parameter" id="EventListener-param-event"><span class="type-annotation">Event</span> <span class="parameter-name">event</span></span>)</span>, [<span class="parameter" id="addEventListener-param-useCapture"><span class="type-annotation">bool</span> <span class="parameter-name">useCapture</span></span>])
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p></p>
+              </dd>
+              <dt id="animate" class="callable">
+                  <span class="name ">animate</span><span class="signature">(<wbr><span class="parameter" id="animate-param-effect"><span class="type-annotation">Object</span> <span class="parameter-name">effect</span></span>, [<span class="parameter" id="animate-param-timing"><span class="type-annotation">Object</span> <span class="parameter-name">timing</span></span>])
+                      &#8594;
+                      <span class="returntype">AnimationPlayer</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p></p>
+              </dd>
+              <dt id="append" class="callable">
+                  <span class="name ">append</span><span class="signature">(<wbr><span class="parameter" id="append-param-newChild"><span class="type-annotation">Node</span> <span class="parameter-name">newChild</span></span>)
+                      &#8594;
+                      <span class="returntype">Node</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Adds a node to the end of the child <code>nodes</code> list of this node.</p>
+              </dd>
+              <dt id="appendHtml" class="callable">
+                  <span class="name ">appendHtml</span><span class="signature">(<wbr><span class="parameter" id="appendHtml-param-text"><span class="type-annotation">String</span> <span class="parameter-name">text</span></span>, {<span class="parameter" id="appendHtml-param-validator"><span class="type-annotation">NodeValidator</span> <span class="parameter-name">validator</span></span>, <span class="parameter" id="appendHtml-param-treeSanitizer"><span class="type-annotation">NodeTreeSanitizer</span> <span class="parameter-name">treeSanitizer</span></span>})
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Parses the specified text as HTML and adds the resulting node after the
+last child of this element.</p>
+              </dd>
+              <dt id="appendText" class="callable">
+                  <span class="name ">appendText</span><span class="signature">(<wbr><span class="parameter" id="appendText-param-text"><span class="type-annotation">String</span> <span class="parameter-name">text</span></span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Adds the specified text after the last child of this element.</p>
+              </dd>
+              <dt id="async" class="callable">
+                  <span class="name ">async</span><span class="signature">(<wbr><span class="parameter" id="async-param-callback"><span class="type-annotation">void</span> <span class="parameter-name">callback</span>()</span>, {<span class="parameter" id="async-param-waitTime"><span class="type-annotation">int</span> <span class="parameter-name">waitTime</span></span>})
+                      &#8594;
+                      <span class="returntype">int</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Runs a callback function asyncronously.</p>
+              </dd>
+              <dt id="attached" class="callable">
+                  <span class="name ">attached</span><span class="signature">(<wbr>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Polymer lifecycle callback.</p>
+              </dd>
+              <dt id="attributeChanged" class="callable">
+                  <span class="name ">attributeChanged</span><span class="signature">(<wbr><span class="parameter" id="attributeChanged-param-name"><span class="type-annotation">String</span> <span class="parameter-name">name</span></span>, <span class="parameter" id="attributeChanged-param-oldValue"><span class="type-annotation">String</span> <span class="parameter-name">oldValue</span></span>, <span class="parameter" id="attributeChanged-param-newValue"><span class="type-annotation">String</span> <span class="parameter-name">newValue</span></span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Called by the DOM whenever an attribute on this has been changed.</p>
+              </dd>
+              <dt id="attributeFollows" class="callable">
+                  <span class="name ">attributeFollows</span><span class="signature">(<wbr><span class="parameter" id="attributeFollows-param-name"><span class="type-annotation">String</span> <span class="parameter-name">name</span></span>, <span class="parameter" id="attributeFollows-param-toElement"><span class="type-annotation">Element</span> <span class="parameter-name">toElement</span></span>, <span class="parameter" id="attributeFollows-param-fromElement"><span class="type-annotation">Element</span> <span class="parameter-name">fromElement</span></span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Removes an HTML attribute from one node, and adds it to another.</p>
+              </dd>
+              <dt id="blur" class="callable">
+                  <span class="name ">blur</span><span class="signature">(<wbr>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p></p>
+              </dd>
+              <dt id="cancelAsync" class="callable">
+                  <span class="name ">cancelAsync</span><span class="signature">(<wbr><span class="parameter" id="cancelAsync-param-handle"><span class="type-annotation">int</span> <span class="parameter-name">handle</span></span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Cancels an async operation started with async.</p>
+              </dd>
+              <dt id="cancelDebouncer" class="callable">
+                  <span class="name ">cancelDebouncer</span><span class="signature">(<wbr><span class="parameter" id="cancelDebouncer-param-jobName"><span class="type-annotation">String</span> <span class="parameter-name">jobName</span></span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Cancels an active debouncer. The callback will not be called.</p>
+              </dd>
+              <dt id="catchRouteChangeEvents" class="callable">
+                  <span class="name ">catchRouteChangeEvents</span><span class="signature">(<wbr><span class="parameter" id="catchRouteChangeEvents-param-e"><span class="type-annotation">Event</span> <span class="parameter-name">e</span></span>, <span class="parameter" id="catchRouteChangeEvents-param-detail"><span class="parameter-name">detail</span></span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Listening for user interaction.</p>
+              </dd>
+              <dt id="classFollows" class="callable">
+                  <span class="name ">classFollows</span><span class="signature">(<wbr><span class="parameter" id="classFollows-param-name"><span class="type-annotation">String</span> <span class="parameter-name">name</span></span>, <span class="parameter" id="classFollows-param-toElement"><span class="type-annotation">Element</span> <span class="parameter-name">toElement</span></span>, <span class="parameter" id="classFollows-param-fromElement"><span class="type-annotation">Element</span> <span class="parameter-name">fromElement</span></span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Removes a class from one node, and adds it to another.</p>
+              </dd>
+              <dt id="clear" class="callable">
+                  <span class="name ">clear</span><span class="signature">(<wbr><span class="parameter" id="clear-param-path"><span class="type-annotation">String</span> <span class="parameter-name">path</span></span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Remove all items from a list at <code>path</code>.</p>
+              </dd>
+              <dt id="click" class="callable">
+                  <span class="name ">click</span><span class="signature">(<wbr>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p></p>
+              </dd>
+              <dt id="clone" class="callable">
+                  <span class="name ">clone</span><span class="signature">(<wbr><span class="parameter" id="clone-param-deep"><span class="type-annotation">bool</span> <span class="parameter-name">deep</span></span>)
+                      &#8594;
+                      <span class="returntype">Node</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Returns a copy of this node.</p>
+              </dd>
+              <dt id="contains" class="callable">
+                  <span class="name ">contains</span><span class="signature">(<wbr><span class="parameter" id="contains-param-other"><span class="type-annotation">Node</span> <span class="parameter-name">other</span></span>)
+                      &#8594;
+                      <span class="returntype">bool</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Returns true if this node contains the specified node.</p>
+              </dd>
+              <dt id="create" class="callable">
+                  <span class="name ">create</span><span class="signature">(<wbr><span class="parameter" id="create-param-tag"><span class="type-annotation">String</span> <span class="parameter-name">tag</span></span>, <span class="parameter" id="create-param-props"><span class="type-annotation">Map</span> <span class="parameter-name">props</span></span>)
+                      &#8594;
+                      <span class="returntype">Element</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Convenience method for creating an element and configuring it.</p>
+              </dd>
+              <dt id="createFragment" class="callable">
+                  <span class="name ">createFragment</span><span class="signature">(<wbr><span class="parameter" id="createFragment-param-html"><span class="type-annotation">String</span> <span class="parameter-name">html</span></span>, {<span class="parameter" id="createFragment-param-validator"><span class="type-annotation">NodeValidator</span> <span class="parameter-name">validator</span></span>, <span class="parameter" id="createFragment-param-treeSanitizer"><span class="type-annotation">NodeTreeSanitizer</span> <span class="parameter-name">treeSanitizer</span></span>})
+                      &#8594;
+                      <span class="returntype">DocumentFragment</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Create a DocumentFragment from the HTML fragment and ensure that it follows
+the sanitization rules specified by the validator or treeSanitizer.</p>
+              </dd>
+              <dt id="createShadowRoot" class="callable">
+                  <span class="name ">createShadowRoot</span><span class="signature">(<wbr>)
+                      &#8594;
+                      <span class="returntype">ShadowRoot</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p></p>
+              </dd>
+              <dt id="debounce" class="callable">
+                  <span class="name ">debounce</span><span class="signature">(<wbr><span class="parameter" id="debounce-param-jobName"><span class="type-annotation">String</span> <span class="parameter-name">jobName</span></span>, <span class="parameter" id="debounce-param-callback"><span class="type-annotation">void</span> <span class="parameter-name">callback</span>()</span>, {<span class="parameter" id="debounce-param-waitTime"><span class="type-annotation">int</span> <span class="parameter-name">waitTime</span></span>})
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Call debounce to collapse multiple requests for a named task into one
+invocation which is made after the wait time has elapsed with no new
+request. If no wait time is given, the callback will be called at
+microtask timing (guaranteed before paint).</p>
+              </dd>
+              <dt id="detached" class="callable">
+                  <span class="name ">detached</span><span class="signature">(<wbr>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Called by the DOM when this element has been removed from the live
+document.</p>
+              </dd>
+              <dt id="dispatchEvent" class="callable">
+                  <span class="name ">dispatchEvent</span><span class="signature">(<wbr><span class="parameter" id="dispatchEvent-param-event"><span class="type-annotation">Event</span> <span class="parameter-name">event</span></span>)
+                      &#8594;
+                      <span class="returntype">bool</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p></p>
+              </dd>
+              <dt id="distributeContent" class="callable">
+                  <span class="name ">distributeContent</span><span class="signature">(<wbr>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Force this element to distribute its children to its local dom. A user
+should call distributeContent if distribution has been invalidated due to
+changes to selectors on child elements that effect distribution that were
+not made via Polymer.dom. For example, if an element contains an insertion
+point with &lt;content select=".foo"&gt; and a foo class is added to a child,
+then distributeContent must be called to update local dom distribution.</p>
+              </dd>
+              <dt id="elementMatches" class="callable">
+                  <span class="name ">elementMatches</span><span class="signature">(<wbr><span class="parameter" id="elementMatches-param-selector"><span class="type-annotation">String</span> <span class="parameter-name">selector</span></span>, <span class="parameter" id="elementMatches-param-node"><span class="type-annotation">Element</span> <span class="parameter-name">node</span></span>)
+                      &#8594;
+                      <span class="returntype">bool</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Polyfill for Element.prototype.matches, which is sometimes still prefixed.</p>
+              </dd>
+              <dt id="enteredView" class="callable">
+                  <span class="name deprecated">enteredView</span><span class="signature">(<wbr>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Deprecated*: override <code>attached</code> instead.</p>
+              </dd>
+              <dt id="fillRange" class="callable">
+                  <span class="name ">fillRange</span><span class="signature">(<wbr><span class="parameter" id="fillRange-param-path"><span class="type-annotation">String</span> <span class="parameter-name">path</span></span>, <span class="parameter" id="fillRange-param-start"><span class="type-annotation">int</span> <span class="parameter-name">start</span></span>, <span class="parameter" id="fillRange-param-end"><span class="type-annotation">int</span> <span class="parameter-name">end</span></span>, [<span class="parameter" id="fillRange-param-fillValue"><span class="parameter-name">fillValue</span></span>])
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Sets the objects in the range <code>start</code> inclusive to <code>end</code> exclusive to the
+given <code>fillValue</code> on the list at <code>path</code>.</p>
+              </dd>
+              <dt id="fire" class="callable">
+                  <span class="name ">fire</span><span class="signature">(<wbr><span class="parameter" id="fire-param-type"><span class="type-annotation">String</span> <span class="parameter-name">type</span></span>, {<span class="parameter" id="fire-param-detail"><span class="parameter-name">detail</span></span>, <span class="parameter" id="fire-param-canBubble"><span class="type-annotation">bool</span> <span class="parameter-name">canBubble</span>: <span class="default-value">true</span></span>, <span class="parameter" id="fire-param-cancelable"><span class="type-annotation">bool</span> <span class="parameter-name">cancelable</span>: <span class="default-value">true</span></span>, <span class="parameter" id="fire-param-node"><span class="type-annotation">Node</span> <span class="parameter-name">node</span></span>})
+                      &#8594;
+                      <span class="returntype">CustomEvent</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Dispatches a custom event with an optional detail object.</p>
+              </dd>
+              <dt id="flushDebouncer" class="callable">
+                  <span class="name ">flushDebouncer</span><span class="signature">(<wbr><span class="parameter" id="flushDebouncer-param-jobName"><span class="type-annotation">String</span> <span class="parameter-name">jobName</span></span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Immediately calls the debouncer callback and inactivates it.</p>
+              </dd>
+              <dt id="focus" class="callable">
+                  <span class="name ">focus</span><span class="signature">(<wbr>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p></p>
+              </dd>
+              <dt id="get" class="callable">
+                  <span class="name ">get</span><span class="signature">(<wbr><span class="parameter" id="get-param-path"><span class="type-annotation">String</span> <span class="parameter-name">path</span></span>, [<span class="parameter" id="get-param-root"><span class="parameter-name">root</span></span>])
+                      &#8594;
+                      <span class="returntype">dynamic</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Gets a value at <code>path</code> for the <code>root</code> object. The <code>root</code> defaults to
+<code>this</code>. The <code>root</code> must be a JsProxy or PolymerElement object.</p>
+              </dd>
+              <dt id="getAnimationPlayers" class="callable">
+                  <span class="name ">getAnimationPlayers</span><span class="signature">(<wbr>)
+                      &#8594;
+                      <span class="returntype">List&lt;AnimationPlayer&gt;</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p></p>
+              </dd>
+              <dt id="getAttribute" class="callable">
+                  <span class="name ">getAttribute</span><span class="signature">(<wbr><span class="parameter" id="getAttribute-param-name"><span class="type-annotation">String</span> <span class="parameter-name">name</span></span>)
+                      &#8594;
+                      <span class="returntype">String</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p></p>
+              </dd>
+              <dt id="getAttributeNS" class="callable">
+                  <span class="name ">getAttributeNS</span><span class="signature">(<wbr><span class="parameter" id="getAttributeNS-param-namespaceURI"><span class="type-annotation">String</span> <span class="parameter-name">namespaceURI</span></span>, <span class="parameter" id="getAttributeNS-param-localName"><span class="type-annotation">String</span> <span class="parameter-name">localName</span></span>)
+                      &#8594;
+                      <span class="returntype">String</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p></p>
+              </dd>
+              <dt id="getBoundingClientRect" class="callable">
+                  <span class="name ">getBoundingClientRect</span><span class="signature">(<wbr>)
+                      &#8594;
+                      <span class="returntype">Rectangle</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Returns the smallest bounding rectangle that encompasses this element's
+padding, scrollbar, and border.</p>
+              </dd>
+              <dt id="getClientRects" class="callable">
+                  <span class="name ">getClientRects</span><span class="signature">(<wbr>)
+                      &#8594;
+                      <span class="returntype">List&lt;Rectangle&gt;</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Returns a list of bounding rectangles for each box associated with this
+element.</p>
+              </dd>
+              <dt id="getComputedStyle" class="callable">
+                  <span class="name ">getComputedStyle</span><span class="signature">(<wbr>[<span class="parameter" id="getComputedStyle-param-pseudoElement"><span class="type-annotation">String</span> <span class="parameter-name">pseudoElement</span></span>])
+                      &#8594;
+                      <span class="returntype">CssStyleDeclaration</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>The set of all CSS values applied to this element, including inherited
+and default values.</p>
+              </dd>
+              <dt id="getContentChildNodes" class="callable">
+                  <span class="name ">getContentChildNodes</span><span class="signature">(<wbr>[<span class="parameter" id="getContentChildNodes-param-selector"><span class="type-annotation">String</span> <span class="parameter-name">selector</span></span>])
+                      &#8594;
+                      <span class="returntype">List&lt;Node&gt;</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Returns a list of nodes distributed to this element's &lt;content&gt;.</p>
+              </dd>
+              <dt id="getContentChildren" class="callable">
+                  <span class="name ">getContentChildren</span><span class="signature">(<wbr>[<span class="parameter" id="getContentChildren-param-selector"><span class="type-annotation">String</span> <span class="parameter-name">selector</span></span>])
+                      &#8594;
+                      <span class="returntype">List&lt;Element&gt;</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Returns a list of element children distributed to this element's
+&lt;content&gt;.</p>
+              </dd>
+              <dt id="getDestinationInsertionPoints" class="callable">
+                  <span class="name ">getDestinationInsertionPoints</span><span class="signature">(<wbr>)
+                      &#8594;
+                      <span class="returntype">List&lt;Node&gt;</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Returns a list of shadow DOM insertion points to which this element is
+distributed.</p>
+              </dd>
+              <dt id="getElementsByClassName" class="callable">
+                  <span class="name ">getElementsByClassName</span><span class="signature">(<wbr><span class="parameter" id="getElementsByClassName-param-classNames"><span class="type-annotation">String</span> <span class="parameter-name">classNames</span></span>)
+                      &#8594;
+                      <span class="returntype">List&lt;Node&gt;</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Returns a list of nodes with the given class name inside this element.</p>
+              </dd>
+              <dt id="getNamespacedAttributes" class="callable">
+                  <span class="name ">getNamespacedAttributes</span><span class="signature">(<wbr><span class="parameter" id="getNamespacedAttributes-param-namespace"><span class="type-annotation">String</span> <span class="parameter-name">namespace</span></span>)
+                      &#8594;
+                      <span class="returntype">Map&lt;String,String&gt;</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Gets a map for manipulating the attributes of a particular namespace.</p>
+              </dd>
+              <dt id="getPropertyInfo" class="callable">
+                  <span class="name ">getPropertyInfo</span><span class="signature">(<wbr><span class="parameter" id="getPropertyInfo-param-property"><span class="type-annotation">String</span> <span class="parameter-name">property</span></span>)
+                      &#8594;
+                      <span class="returntype">JsObject</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Returns a property descriptor object for the property specified.</p>
+              </dd>
+              <dt id="hasChildNodes" class="callable">
+                  <span class="name ">hasChildNodes</span><span class="signature">(<wbr>)
+                      &#8594;
+                      <span class="returntype">bool</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Returns true if this node has any children.</p>
+              </dd>
+              <dt id="importHref" class="callable">
+                  <span class="name ">importHref</span><span class="signature">(<wbr><span class="parameter" id="importHref-param-href"><span class="type-annotation">String</span> <span class="parameter-name">href</span></span>, {<span class="parameter" id="importHref-param-onLoad"><span class="type-annotation">void</span> <span class="parameter-name">onLoad</span>(<span class="parameter" id="onLoad-param-e"><span class="parameter-name">e</span></span>)</span>, <span class="parameter" id="importHref-param-onError"><span class="type-annotation">void</span> <span class="parameter-name">onError</span>(<span class="parameter" id="onError-param-e"><span class="parameter-name">e</span></span>)</span>})
+                      &#8594;
+                      <span class="returntype">LinkElement</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Convenience method for importing an HTML document imperatively.</p>
+              </dd>
+              <dt id="insert" class="callable">
+                  <span class="name ">insert</span><span class="signature">(<wbr><span class="parameter" id="insert-param-path"><span class="type-annotation">String</span> <span class="parameter-name">path</span></span>, <span class="parameter" id="insert-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span></span>, <span class="parameter" id="insert-param-element"><span class="parameter-name">element</span></span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Inserts <code>element</code> at position <code>index</code> to the list at <code>path</code>.</p>
+              </dd>
+              <dt id="insertAdjacentElement" class="callable">
+                  <span class="name ">insertAdjacentElement</span><span class="signature">(<wbr><span class="parameter" id="insertAdjacentElement-param-where"><span class="type-annotation">String</span> <span class="parameter-name">where</span></span>, <span class="parameter" id="insertAdjacentElement-param-element"><span class="type-annotation">Element</span> <span class="parameter-name">element</span></span>)
+                      &#8594;
+                      <span class="returntype">Element</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p></p>
+              </dd>
+              <dt id="insertAdjacentHtml" class="callable">
+                  <span class="name ">insertAdjacentHtml</span><span class="signature">(<wbr><span class="parameter" id="insertAdjacentHtml-param-where"><span class="type-annotation">String</span> <span class="parameter-name">where</span></span>, <span class="parameter" id="insertAdjacentHtml-param-html"><span class="type-annotation">String</span> <span class="parameter-name">html</span></span>, {<span class="parameter" id="insertAdjacentHtml-param-validator"><span class="type-annotation">NodeValidator</span> <span class="parameter-name">validator</span></span>, <span class="parameter" id="insertAdjacentHtml-param-treeSanitizer"><span class="type-annotation">NodeTreeSanitizer</span> <span class="parameter-name">treeSanitizer</span></span>})
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Parses text as an HTML fragment and inserts it into the DOM at the
+specified location.</p>
+              </dd>
+              <dt id="insertAdjacentText" class="callable">
+                  <span class="name ">insertAdjacentText</span><span class="signature">(<wbr><span class="parameter" id="insertAdjacentText-param-where"><span class="type-annotation">String</span> <span class="parameter-name">where</span></span>, <span class="parameter" id="insertAdjacentText-param-text"><span class="type-annotation">String</span> <span class="parameter-name">text</span></span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p></p>
+              </dd>
+              <dt id="insertAll" class="callable">
+                  <span class="name ">insertAll</span><span class="signature">(<wbr><span class="parameter" id="insertAll-param-path"><span class="type-annotation">String</span> <span class="parameter-name">path</span></span>, <span class="parameter" id="insertAll-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span></span>, <span class="parameter" id="insertAll-param-elements"><span class="type-annotation">Iterable</span> <span class="parameter-name">elements</span></span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Inserts <code>elements</code> at position <code>index</code> to the list at <code>path</code>.</p>
+              </dd>
+              <dt id="insertAllBefore" class="callable">
+                  <span class="name ">insertAllBefore</span><span class="signature">(<wbr><span class="parameter" id="insertAllBefore-param-newNodes"><span class="type-annotation">Iterable&lt;Node&gt;</span> <span class="parameter-name">newNodes</span></span>, <span class="parameter" id="insertAllBefore-param-refChild"><span class="type-annotation">Node</span> <span class="parameter-name">refChild</span></span>)
+                      &#8594;
+                      <span class="returntype">Node</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Inserts all of the nodes into this node directly before refChild.</p>
+              </dd>
+              <dt id="insertBefore" class="callable">
+                  <span class="name ">insertBefore</span><span class="signature">(<wbr><span class="parameter" id="insertBefore-param-newChild"><span class="type-annotation">Node</span> <span class="parameter-name">newChild</span></span>, <span class="parameter" id="insertBefore-param-refChild"><span class="type-annotation">Node</span> <span class="parameter-name">refChild</span></span>)
+                      &#8594;
+                      <span class="returntype">Node</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Inserts all of the nodes into this node directly before refChild.</p>
+              </dd>
+              <dt id="instanceTemplate" class="callable">
+                  <span class="name ">instanceTemplate</span><span class="signature">(<wbr><span class="parameter" id="instanceTemplate-param-template"><span class="type-annotation">TemplateElement</span> <span class="parameter-name">template</span></span>)
+                      &#8594;
+                      <span class="returntype">DocumentFragment</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Calls importNode on the content of the template specified and returns a
+document fragment containing the imported content.</p>
+              </dd>
+              <dt id="isDebouncerActive" class="callable">
+                  <span class="name ">isDebouncerActive</span><span class="signature">(<wbr><span class="parameter" id="isDebouncerActive-param-jobName"><span class="type-annotation">String</span> <span class="parameter-name">jobName</span></span>)
+                      &#8594;
+                      <span class="returntype">bool</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Returns whether a named debouncer is active.</p>
+              </dd>
+              <dt id="leftView" class="callable">
+                  <span class="name deprecated">leftView</span><span class="signature">(<wbr>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Deprecated*: override <code>detached</code> instead.</p>
+              </dd>
+              <dt id="linkPaths" class="callable">
+                  <span class="name ">linkPaths</span><span class="signature">(<wbr><span class="parameter" id="linkPaths-param-to"><span class="type-annotation">String</span> <span class="parameter-name">to</span></span>, <span class="parameter" id="linkPaths-param-from"><span class="type-annotation">String</span> <span class="parameter-name">from</span></span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Aliases one data path as another, such that path notifications from one
+are routed to the other.</p>
+              </dd>
+              <dt id="listen" class="callable">
+                  <span class="name ">listen</span><span class="signature">(<wbr><span class="parameter" id="listen-param-node"><span class="type-annotation">Element</span> <span class="parameter-name">node</span></span>, <span class="parameter" id="listen-param-eventName"><span class="type-annotation">String</span> <span class="parameter-name">eventName</span></span>, <span class="parameter" id="listen-param-methodName"><span class="type-annotation">String</span> <span class="parameter-name">methodName</span></span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Convenience method to add an event listener on a given element, late bound
+to a named method on this element.</p>
+              </dd>
+              <dt id="matches" class="callable">
+                  <span class="name ">matches</span><span class="signature">(<wbr><span class="parameter" id="matches-param-selectors"><span class="type-annotation">String</span> <span class="parameter-name">selectors</span></span>)
+                      &#8594;
+                      <span class="returntype">bool</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p></p>
+              </dd>
+              <dt id="matchesWithAncestors" class="callable">
+                  <span class="name ">matchesWithAncestors</span><span class="signature">(<wbr><span class="parameter" id="matchesWithAncestors-param-selectors"><span class="type-annotation">String</span> <span class="parameter-name">selectors</span></span>)
+                      &#8594;
+                      <span class="returntype">bool</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Checks if this element or any of its parents match the CSS selectors.</p>
+              </dd>
+              <dt id="navigateAbsolute" class="callable">
+                  <span class="name ">navigateAbsolute</span><span class="signature">(<wbr><span class="parameter" id="navigateAbsolute-param-absoluteRoute"><span class="type-annotation">String</span> <span class="parameter-name">absoluteRoute</span></span>, [<span class="parameter" id="navigateAbsolute-param-params"><span class="type-annotation">List&lt;String&gt;</span> <span class="parameter-name">params</span> = <span class="default-value">null</span></span>])
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Programmatically change current location (route) to any
+absolute path.</p>
+              </dd>
+              <dt id="navigateToChild" class="callable">
+                  <span class="name ">navigateToChild</span><span class="signature">(<wbr><span class="parameter" id="navigateToChild-param-route"><span class="type-annotation">String</span> <span class="parameter-name">route</span></span>, [<span class="parameter" id="navigateToChild-param-params"><span class="type-annotation">List&lt;String&gt;</span> <span class="parameter-name">params</span> = <span class="default-value">null</span></span>])
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Programmatically change current location (route)
+so that specified child element of this element is visible.</p>
+              </dd>
+              <dt id="navigateToElement" class="callable">
+                  <span class="name ">navigateToElement</span><span class="signature">(<wbr><span class="parameter" id="navigateToElement-param-element"><span class="type-annotation">Element</span> <span class="parameter-name">element</span></span>, [<span class="parameter" id="navigateToElement-param-params"><span class="type-annotation">List&lt;String&gt;</span> <span class="parameter-name">params</span> = <span class="default-value">null</span></span>])
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Programmatically change current location (route) so the 'element' in argument is visible.</p>
+              </dd>
+              <dt id="navigateToSibling" class="callable">
+                  <span class="name ">navigateToSibling</span><span class="signature">(<wbr><span class="parameter" id="navigateToSibling-param-route"><span class="type-annotation">String</span> <span class="parameter-name">route</span></span>, [<span class="parameter" id="navigateToSibling-param-params"><span class="type-annotation">List&lt;String&gt;</span> <span class="parameter-name">params</span> = <span class="default-value">null</span></span>])
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Programmatically change current location (route)
+so that specified sibling of this element is visible.</p>
+              </dd>
+              <dt id="notifyPath" class="callable">
+                  <span class="name ">notifyPath</span><span class="signature">(<wbr><span class="parameter" id="notifyPath-param-path"><span class="type-annotation">String</span> <span class="parameter-name">path</span></span>, <span class="parameter" id="notifyPath-param-value"><span class="parameter-name">value</span></span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Returns true if notification actually took place, based on a dirty check
+of whether the new value was already known</p>
+              </dd>
+              <dt id="offsetTo" class="callable">
+                  <span class="name ">offsetTo</span><span class="signature">(<wbr><span class="parameter" id="offsetTo-param-parent"><span class="type-annotation">Element</span> <span class="parameter-name">parent</span></span>)
+                      &#8594;
+                      <span class="returntype">Point</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Provides the offset of this element's <code>borderEdge</code> relative to the
+specified <code>parent</code>.</p>
+              </dd>
+              <dt id="polymerCreated" class="callable">
+                  <span class="name ">polymerCreated</span><span class="signature">(<wbr>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p></p>
+              </dd>
+              <dt id="query" class="callable">
+                  <span class="name deprecated">query</span><span class="signature">(<wbr><span class="parameter" id="query-param-relativeSelectors"><span class="type-annotation">String</span> <span class="parameter-name">relativeSelectors</span></span>)
+                      &#8594;
+                      <span class="returntype">Element</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Alias for <code>querySelector</code>. Note this function is deprecated because its
+semantics will be changing in the future.</p>
+              </dd>
+              <dt id="queryAll" class="callable">
+                  <span class="name deprecated">queryAll</span><span class="signature">(<wbr><span class="parameter" id="queryAll-param-relativeSelectors"><span class="type-annotation">String</span> <span class="parameter-name">relativeSelectors</span></span>)
+                      &#8594;
+                      <span class="returntype">ElementList&lt;Element&gt;</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Alias for <code>querySelectorAll</code>. Note this function is deprecated because its
+semantics will be changing in the future.</p>
+              </dd>
+              <dt id="querySelector" class="callable">
+                  <span class="name ">querySelector</span><span class="signature">(<wbr><span class="parameter" id="querySelector-param-selectors"><span class="type-annotation">String</span> <span class="parameter-name">selectors</span></span>)
+                      &#8594;
+                      <span class="returntype">Element</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Finds the first descendant element of this element that matches the
+specified group of selectors.</p>
+              </dd>
+              <dt id="querySelectorAll" class="callable">
+                  <span class="name ">querySelectorAll</span><span class="signature">(<wbr><span class="parameter" id="querySelectorAll-param-selectors"><span class="type-annotation">String</span> <span class="parameter-name">selectors</span></span>)
+                      &#8594;
+                      <span class="returntype">ElementList&lt;Element&gt;</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Finds all descendent elements of this element that match the specified
+group of selectors.</p>
+              </dd>
+              <dt id="reflectPropertyToAttribute" class="callable">
+                  <span class="name ">reflectPropertyToAttribute</span><span class="signature">(<wbr><span class="parameter" id="reflectPropertyToAttribute-param-name"><span class="type-annotation">String</span> <span class="parameter-name">name</span></span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Serializes a property to its associated attribute.</p>
+              </dd>
+              <dt id="remove" class="callable">
+                  <span class="name ">remove</span><span class="signature">(<wbr>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Removes this node from the DOM.</p>
+              </dd>
+              <dt id="removeAt" class="callable">
+                  <span class="name ">removeAt</span><span class="signature">(<wbr><span class="parameter" id="removeAt-param-path"><span class="type-annotation">String</span> <span class="parameter-name">path</span></span>, <span class="parameter" id="removeAt-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span></span>)
+                      &#8594;
+                      <span class="returntype">dynamic</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Removes the item at <code>index</code> from the list at <code>path</code>. Returns the removed
+element.</p>
+              </dd>
+              <dt id="removeEventListener" class="callable">
+                  <span class="name ">removeEventListener</span><span class="signature">(<wbr><span class="parameter" id="removeEventListener-param-type"><span class="type-annotation">String</span> <span class="parameter-name">type</span></span>, <span class="parameter" id="removeEventListener-param-listener"><span class="type-annotation">dynamic</span> <span class="parameter-name">listener</span>(<span class="parameter" id="EventListener-param-event"><span class="type-annotation">Event</span> <span class="parameter-name">event</span></span>)</span>, [<span class="parameter" id="removeEventListener-param-useCapture"><span class="type-annotation">bool</span> <span class="parameter-name">useCapture</span></span>])
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p></p>
+              </dd>
+              <dt id="removeItem" class="callable">
+                  <span class="name ">removeItem</span><span class="signature">(<wbr><span class="parameter" id="removeItem-param-path"><span class="type-annotation">String</span> <span class="parameter-name">path</span></span>, <span class="parameter" id="removeItem-param-value"><span class="parameter-name">value</span></span>)
+                      &#8594;
+                      <span class="returntype">bool</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Removes the first occurrence of <code>value</code> from the list at <code>path</code>.
+Returns true if value was in the list, false otherwise.
+<strong>Note</strong>: Renamed from <code>remove</code> because that conflicts with
+HtmlElement.remove.</p>
+              </dd>
+              <dt id="removeLast" class="callable">
+                  <span class="name ">removeLast</span><span class="signature">(<wbr><span class="parameter" id="removeLast-param-path"><span class="type-annotation">String</span> <span class="parameter-name">path</span></span>)
+                      &#8594;
+                      <span class="returntype">dynamic</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Removes the last from the list at <code>path</code>. Returns the removed element.</p>
+              </dd>
+              <dt id="removeRange" class="callable">
+                  <span class="name ">removeRange</span><span class="signature">(<wbr><span class="parameter" id="removeRange-param-path"><span class="type-annotation">String</span> <span class="parameter-name">path</span></span>, <span class="parameter" id="removeRange-param-start"><span class="type-annotation">int</span> <span class="parameter-name">start</span></span>, <span class="parameter" id="removeRange-param-end"><span class="type-annotation">int</span> <span class="parameter-name">end</span></span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Removes the objects in the range <code>start</code> inclusive to <code>end</code> exclusive from
+the list at <code>path</code>.</p>
+              </dd>
+              <dt id="removeWhere" class="callable">
+                  <span class="name ">removeWhere</span><span class="signature">(<wbr><span class="parameter" id="removeWhere-param-path"><span class="type-annotation">String</span> <span class="parameter-name">path</span></span>, <span class="parameter" id="removeWhere-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="test-param-element"><span class="parameter-name">element</span></span>)</span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Removes all objects from the list at <code>path</code> that satisfy <code>test</code>.
+TODO(jakemac): Optimize by removing whole ranges?</p>
+              </dd>
+              <dt id="replaceRange" class="callable">
+                  <span class="name ">replaceRange</span><span class="signature">(<wbr><span class="parameter" id="replaceRange-param-path"><span class="type-annotation">String</span> <span class="parameter-name">path</span></span>, <span class="parameter" id="replaceRange-param-start"><span class="type-annotation">int</span> <span class="parameter-name">start</span></span>, <span class="parameter" id="replaceRange-param-end"><span class="type-annotation">int</span> <span class="parameter-name">end</span></span>, <span class="parameter" id="replaceRange-param-replacement"><span class="type-annotation">Iterable</span> <span class="parameter-name">replacement</span></span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Removes the objects in the range <code>start</code> inclusive to <code>end</code> exclusive and
+inserts the contents of <code>replacement</code> in its place for the list at <code>path</code>.</p>
+              </dd>
+              <dt id="replaceWith" class="callable">
+                  <span class="name ">replaceWith</span><span class="signature">(<wbr><span class="parameter" id="replaceWith-param-otherNode"><span class="type-annotation">Node</span> <span class="parameter-name">otherNode</span></span>)
+                      &#8594;
+                      <span class="returntype">Node</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Replaces this node with another node.</p>
+              </dd>
+              <dt id="requestFullscreen" class="callable">
+                  <span class="name ">requestFullscreen</span><span class="signature">(<wbr>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p></p>
+              </dd>
+              <dt id="requestPointerLock" class="callable">
+                  <span class="name ">requestPointerLock</span><span class="signature">(<wbr>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p></p>
+              </dd>
+              <dt id="retainWhere" class="callable">
+                  <span class="name ">retainWhere</span><span class="signature">(<wbr><span class="parameter" id="retainWhere-param-path"><span class="type-annotation">String</span> <span class="parameter-name">path</span></span>, <span class="parameter" id="retainWhere-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="test-param-element"><span class="parameter-name">element</span></span>)</span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Removes all objects from the list at <code>path</code> that fail to satisfy <code>test</code>.</p>
+              </dd>
+              <dt id="routeChanged" class="callable">
+                  <a href="fnx_router.lib.fnx_router/FnxRouter/routeChanged.html"><span class="name ">routeChanged</span></a><span class="signature">(<wbr><span class="parameter" id="routeChanged-param-visible"><span class="type-annotation">bool</span> <span class="parameter-name">visible</span></span>, <span class="parameter" id="routeChanged-param-params"><span class="type-annotation">List&lt;String&gt;</span> <span class="parameter-name">params</span></span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <p>Implement this callback in your element.<a href="fnx_router.lib.fnx_router/FnxRouter/routeChanged.html">&hellip;</a>
+</p>
+              </dd>
+              <dt id="scopeSubtree" class="callable">
+                  <span class="name ">scopeSubtree</span><span class="signature">(<wbr><span class="parameter" id="scopeSubtree-param-container"><span class="type-annotation">Element</span> <span class="parameter-name">container</span></span>, <span class="parameter" id="scopeSubtree-param-shouldObserve"><span class="type-annotation">bool</span> <span class="parameter-name">shouldObserve</span></span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Apply style scoping to the specified container and all its descendants. If
+shoudlObserve is true, changes to the container are monitored via mutation
+observer and scoping is applied.</p>
+              </dd>
+              <dt id="scrollIntoView" class="callable">
+                  <span class="name ">scrollIntoView</span><span class="signature">(<wbr>[<span class="parameter" id="scrollIntoView-param-alignment"><span class="type-annotation">ScrollAlignment</span> <span class="parameter-name">alignment</span></span>])
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Scrolls this element into view.</p>
+              </dd>
+              <dt id="serializeValueToAttribute" class="callable">
+                  <span class="name ">serializeValueToAttribute</span><span class="signature">(<wbr><span class="parameter" id="serializeValueToAttribute-param-value"><span class="parameter-name">value</span></span>, <span class="parameter" id="serializeValueToAttribute-param-attribute"><span class="type-annotation">String</span> <span class="parameter-name">attribute</span></span>, [<span class="parameter" id="serializeValueToAttribute-param-node"><span class="type-annotation">Element</span> <span class="parameter-name">node</span></span>])
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Sets a typed value to an HTML attribute on a node.</p>
+              </dd>
+              <dt id="set" class="callable">
+                  <span class="name ">set</span><span class="signature">(<wbr><span class="parameter" id="set-param-path"><span class="type-annotation">String</span> <span class="parameter-name">path</span></span>, <span class="parameter" id="set-param-value"><span class="parameter-name">value</span></span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Sets a value on an attribute path, and notifies of changes.</p>
+              </dd>
+              <dt id="setAll" class="callable">
+                  <span class="name ">setAll</span><span class="signature">(<wbr><span class="parameter" id="setAll-param-path"><span class="type-annotation">String</span> <span class="parameter-name">path</span></span>, <span class="parameter" id="setAll-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span></span>, <span class="parameter" id="setAll-param-iterable"><span class="type-annotation">Iterable</span> <span class="parameter-name">iterable</span></span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Overwrites objects in the list at <code>path</code> with the objects of <code>iterable</code>,
+starting at position <code>index</code> in this list.</p>
+              </dd>
+              <dt id="setAttribute" class="callable">
+                  <span class="name ">setAttribute</span><span class="signature">(<wbr><span class="parameter" id="setAttribute-param-name"><span class="type-annotation">String</span> <span class="parameter-name">name</span></span>, <span class="parameter" id="setAttribute-param-value"><span class="type-annotation">String</span> <span class="parameter-name">value</span></span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p></p>
+              </dd>
+              <dt id="setAttributeNS" class="callable">
+                  <span class="name ">setAttributeNS</span><span class="signature">(<wbr><span class="parameter" id="setAttributeNS-param-namespaceURI"><span class="type-annotation">String</span> <span class="parameter-name">namespaceURI</span></span>, <span class="parameter" id="setAttributeNS-param-qualifiedName"><span class="type-annotation">String</span> <span class="parameter-name">qualifiedName</span></span>, <span class="parameter" id="setAttributeNS-param-value"><span class="type-annotation">String</span> <span class="parameter-name">value</span></span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p></p>
+              </dd>
+              <dt id="setInnerHtml" class="callable">
+                  <span class="name ">setInnerHtml</span><span class="signature">(<wbr><span class="parameter" id="setInnerHtml-param-html"><span class="type-annotation">String</span> <span class="parameter-name">html</span></span>, {<span class="parameter" id="setInnerHtml-param-validator"><span class="type-annotation">NodeValidator</span> <span class="parameter-name">validator</span></span>, <span class="parameter" id="setInnerHtml-param-treeSanitizer"><span class="type-annotation">NodeTreeSanitizer</span> <span class="parameter-name">treeSanitizer</span></span>})
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Parses the HTML fragment and sets it as the contents of this element.
+This ensures that the generated content follows the sanitization rules
+specified by the validator or treeSanitizer.</p>
+              </dd>
+              <dt id="setRange" class="callable">
+                  <span class="name ">setRange</span><span class="signature">(<wbr><span class="parameter" id="setRange-param-path"><span class="type-annotation">String</span> <span class="parameter-name">path</span></span>, <span class="parameter" id="setRange-param-start"><span class="type-annotation">int</span> <span class="parameter-name">start</span></span>, <span class="parameter" id="setRange-param-end"><span class="type-annotation">int</span> <span class="parameter-name">end</span></span>, <span class="parameter" id="setRange-param-iterable"><span class="type-annotation">Iterable</span> <span class="parameter-name">iterable</span></span>, [<span class="parameter" id="setRange-param-skipCount"><span class="type-annotation">int</span> <span class="parameter-name">skipCount</span> = <span class="default-value">0</span></span>])
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Copies the objects of <code>iterable</code>, skipping <code>skipCount</code> objects first, into
+the range <code>start</code>, inclusive, to <code>end</code>, exclusive, of the list at <code>path</code>.</p>
+              </dd>
+              <dt id="setScrollDirection" class="callable">
+                  <span class="name ">setScrollDirection</span><span class="signature">(<wbr>[<span class="parameter" id="setScrollDirection-param-direction"><span class="type-annotation">String</span> <span class="parameter-name">direction</span> = <span class="default-value">'all'</span></span>, <span class="parameter" id="setScrollDirection-param-node"><span class="type-annotation">Element</span> <span class="parameter-name">node</span></span>])
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Override scrolling behavior to all direction, one direction, or none.</p>
+              </dd>
+              <dt id="toggleAttribute" class="callable">
+                  <span class="name ">toggleAttribute</span><span class="signature">(<wbr><span class="parameter" id="toggleAttribute-param-name"><span class="type-annotation">String</span> <span class="parameter-name">name</span></span>, [<span class="parameter" id="toggleAttribute-param-value"><span class="type-annotation">bool</span> <span class="parameter-name">value</span></span>, <span class="parameter" id="toggleAttribute-param-node"><span class="type-annotation">Element</span> <span class="parameter-name">node</span></span>])
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Toggles an HTML attribute on or off.</p>
+              </dd>
+              <dt id="toggleClass" class="callable">
+                  <span class="name ">toggleClass</span><span class="signature">(<wbr><span class="parameter" id="toggleClass-param-name"><span class="type-annotation">String</span> <span class="parameter-name">name</span></span>, [<span class="parameter" id="toggleClass-param-value"><span class="type-annotation">bool</span> <span class="parameter-name">value</span></span>, <span class="parameter" id="toggleClass-param-node"><span class="type-annotation">Element</span> <span class="parameter-name">node</span></span>])
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Toggles a CSS class on or off.</p>
+              </dd>
+              <dt id="toString" class="callable">
+                  <span class="name ">toString</span><span class="signature">(<wbr>)
+                      &#8594;
+                      <span class="returntype">String</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>The string representation of this element.</p>
+              </dd>
+              <dt id="transform" class="callable">
+                  <span class="name ">transform</span><span class="signature">(<wbr><span class="parameter" id="transform-param-transform"><span class="type-annotation">String</span> <span class="parameter-name">transform</span></span>, [<span class="parameter" id="transform-param-node"><span class="type-annotation">Element</span> <span class="parameter-name">node</span></span>])
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Cross-platform helper for setting an element's CSS transform property.</p>
+              </dd>
+              <dt id="translate3d" class="callable">
+                  <span class="name ">translate3d</span><span class="signature">(<wbr><span class="parameter" id="translate3d-param-x"><span class="type-annotation">String</span> <span class="parameter-name">x</span></span>, <span class="parameter" id="translate3d-param-y"><span class="type-annotation">String</span> <span class="parameter-name">y</span></span>, <span class="parameter" id="translate3d-param-z"><span class="type-annotation">String</span> <span class="parameter-name">z</span></span>, [<span class="parameter" id="translate3d-param-node"><span class="type-annotation">Element</span> <span class="parameter-name">node</span></span>])
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Cross-platform helper for setting an element's CSS translate3d property.</p>
+              </dd>
+              <dt id="unlinkPaths" class="callable">
+                  <span class="name ">unlinkPaths</span><span class="signature">(<wbr><span class="parameter" id="unlinkPaths-param-path"><span class="type-annotation">String</span> <span class="parameter-name">path</span></span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Removes a data path alias previously established with linkPaths.</p>
+              </dd>
+              <dt id="updateStyles" class="callable">
+                  <span class="name ">updateStyles</span><span class="signature">(<wbr>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <div class="features">inherited</div>
+                  <p>Re-evaluates and applies custom CSS properties based on dynamic changes to
+this element's scope, such as adding or removing classes in this element's
+local DOM.</p>
+              </dd>
+          </dl>
+      </section>
+
+    </div> <!-- /.main-content -->
+
+  <div class="col-xs-6 col-sm-6 col-md-2 sidebar sidebar-offcanvas-right">
+    <h5>FnxRouter</h5>
+    <ol>
+    
+    
+    
+    
+      <li class="section-title"><a href="fnx_router.lib.fnx_router/FnxRouter-class.html#constructors">Constructors</a></li>
+      <li><a href="fnx_router.lib.fnx_router/FnxRouter/FnxRouter.created.html">created</a></li>
+    
+    
+      <li class="section-title"><a href="fnx_router.lib.fnx_router/FnxRouter-class.html#instance-methods">Methods</a></li>
+      <li>$$
+</li>
+      <li>add
+</li>
+      <li>addAll
+</li>
+      <li>addEventListener
+</li>
+      <li>animate
+</li>
+      <li>append
+</li>
+      <li>appendHtml
+</li>
+      <li>appendText
+</li>
+      <li>async
+</li>
+      <li>attached
+</li>
+      <li>attributeChanged
+</li>
+      <li>attributeFollows
+</li>
+      <li>blur
+</li>
+      <li>cancelAsync
+</li>
+      <li>cancelDebouncer
+</li>
+      <li>catchRouteChangeEvents
+</li>
+      <li>classFollows
+</li>
+      <li>clear
+</li>
+      <li>click
+</li>
+      <li>clone
+</li>
+      <li>contains
+</li>
+      <li>create
+</li>
+      <li>createFragment
+</li>
+      <li>createShadowRoot
+</li>
+      <li>debounce
+</li>
+      <li>detached
+</li>
+      <li>dispatchEvent
+</li>
+      <li>distributeContent
+</li>
+      <li>elementMatches
+</li>
+      <li>enteredView
+</li>
+      <li>fillRange
+</li>
+      <li>fire
+</li>
+      <li>flushDebouncer
+</li>
+      <li>focus
+</li>
+      <li>get
+</li>
+      <li>getAnimationPlayers
+</li>
+      <li>getAttribute
+</li>
+      <li>getAttributeNS
+</li>
+      <li>getBoundingClientRect
+</li>
+      <li>getClientRects
+</li>
+      <li>getComputedStyle
+</li>
+      <li>getContentChildNodes
+</li>
+      <li>getContentChildren
+</li>
+      <li>getDestinationInsertionPoints
+</li>
+      <li>getElementsByClassName
+</li>
+      <li>getNamespacedAttributes
+</li>
+      <li>getPropertyInfo
+</li>
+      <li>hasChildNodes
+</li>
+      <li>importHref
+</li>
+      <li>insert
+</li>
+      <li>insertAdjacentElement
+</li>
+      <li>insertAdjacentHtml
+</li>
+      <li>insertAdjacentText
+</li>
+      <li>insertAll
+</li>
+      <li>insertAllBefore
+</li>
+      <li>insertBefore
+</li>
+      <li>instanceTemplate
+</li>
+      <li>isDebouncerActive
+</li>
+      <li>leftView
+</li>
+      <li>linkPaths
+</li>
+      <li>listen
+</li>
+      <li>matches
+</li>
+      <li>matchesWithAncestors
+</li>
+      <li>navigateAbsolute
+</li>
+      <li>navigateToChild
+</li>
+      <li>navigateToElement
+</li>
+      <li>navigateToSibling
+</li>
+      <li>notifyPath
+</li>
+      <li>offsetTo
+</li>
+      <li>polymerCreated
+</li>
+      <li>query
+</li>
+      <li>queryAll
+</li>
+      <li>querySelector
+</li>
+      <li>querySelectorAll
+</li>
+      <li>reflectPropertyToAttribute
+</li>
+      <li>remove
+</li>
+      <li>removeAt
+</li>
+      <li>removeEventListener
+</li>
+      <li>removeItem
+</li>
+      <li>removeLast
+</li>
+      <li>removeRange
+</li>
+      <li>removeWhere
+</li>
+      <li>replaceRange
+</li>
+      <li>replaceWith
+</li>
+      <li>requestFullscreen
+</li>
+      <li>requestPointerLock
+</li>
+      <li>retainWhere
+</li>
+      <li><a href="fnx_router.lib.fnx_router/FnxRouter/routeChanged.html">routeChanged</a>
+</li>
+      <li>scopeSubtree
+</li>
+      <li>scrollIntoView
+</li>
+      <li>serializeValueToAttribute
+</li>
+      <li>set
+</li>
+      <li>setAll
+</li>
+      <li>setAttribute
+</li>
+      <li>setAttributeNS
+</li>
+      <li>setInnerHtml
+</li>
+      <li>setRange
+</li>
+      <li>setScrollDirection
+</li>
+      <li>toggleAttribute
+</li>
+      <li>toggleClass
+</li>
+      <li>toString
+</li>
+      <li>transform
+</li>
+      <li>translate3d
+</li>
+      <li>unlinkPaths
+</li>
+      <li>updateStyles
+</li>
+    </ol>
+  </div><!--/.sidebar-offcanvas-->
+
+  </div> <!-- row -->
+</div> <!-- container -->
+
+<footer>
+    <div class="container-fluid">
+        <div class="container">
+            <p class="text-center">
+                <span class="no-break">
+                  fnx_router 0.1.0 api docs
+                </span>
+                &bull;
+                <span class="copyright no-break">
+                  <a href="https://www.dartlang.org">
+                    <img src="static-assets/favicon.png" alt="Dart" title="Dart"width="16" height="16">
+                  </a>
+                </span>
+                &bull;
+                <span class="copyright no-break">
+                  <a href="http://creativecommons.org/licenses/by-sa/4.0/">cc license</a>
+                </span>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="static-assets/typeahead.bundle.min.js"></script>
+<script src="static-assets/prettify.js"></script>
+<script src="static-assets/script.js"></script>
+<!-- Do not remove placeholder -->
+<!-- Footer Placeholder -->
+
+<!-- Made with <3 by dartdoc version 0.6.0+1 -->
+</body>
+
+</html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FnxRouterBehavior class - fnx_router.lib.fnx_router_behavior library - Dart API</title>
+    <!-- required because all the links are pseudo-absolute -->
+    <base href="..">
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro|Roboto:500,400italic,300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="static-assets/prettify.css">
+    <link rel="stylesheet" href="static-assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static-assets/styles.css">
+
+    <meta name="description" content="API docs for the FnxRouterBehavior class from the fnx_router.lib.fnx_router_behavior library, for the Dart programming language.">
+    <link rel="icon" href="static-assets/favicon.png">
+
+    <!-- Do not remove placeholder -->
+    <!-- Header Placeholder -->
+</head>
+
+<body>
+
+<div id="overlay-under-drawer"></div>
+
+<header class="container-fluid" id="title">
+    <nav class="navbar navbar-fixed-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 contents">
+              <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+              <ol class="breadcrumbs gt-separated hidden-xs">
+                  <li><a href="index.html">fnx_router</a></li>
+                  <li><a href="fnx_router.lib.fnx_router_behavior/fnx_router.lib.fnx_router_behavior-library.html">fnx_router.lib.fnx_router_behavior</a></li>
+                  <li class="self-crumb">FnxRouterBehavior</li>
+              </ol>
+              <div class="self-name">FnxRouterBehavior</div>
+              <form class="search navbar-right" role="search">
+                <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+              </form>
+            </div> <!-- /col -->
+          </div> <!-- /row -->
+        </div> <!-- /container -->
+    </nav>
+
+    <div class="container masthead">
+      <div class="row">
+        <div class="col-sm-12 contents">
+          <ol class="breadcrumbs gt-separated visible-xs">
+              <li><a href="index.html">fnx_router</a></li>
+              <li><a href="fnx_router.lib.fnx_router_behavior/fnx_router.lib.fnx_router_behavior-library.html">fnx_router.lib.fnx_router_behavior</a></li>
+              <li class="self-crumb">FnxRouterBehavior</li>
+          </ol>
+          <div class="title-description">
+              <h1 class="title">
+                  <div class="kind">class</div> FnxRouterBehavior
+              </h1>
+          </div>
+          <ul class="subnav">
+              <li><a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior-class.html#instance-properties">Properties</a></li>
+              <li><a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior-class.html#constructors">Constructors</a></li>
+              <li><a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior-class.html#instance-methods">Methods</a></li>
+          </ul>
+        </div> <!-- /col -->
+      </div> <!-- /row -->
+    </div> <!-- /container -->
+
+</header>
+
+<div class="container body">
+  <div class="row">
+
+  <div class="col-xs-6 col-sm-3 col-md-2 sidebar sidebar-offcanvas-left">
+    <h5><a href="index.html">fnx_router</a></h5>
+    <h5><a href="fnx_router.lib.fnx_router_behavior/fnx_router.lib.fnx_router_behavior-library.html">fnx_router.lib.fnx_router_behavior</a></h5>
+
+    <ol>
+    
+    
+    
+      <li class="section-title"><a href="fnx_router.lib.fnx_router_behavior/fnx_router.lib.fnx_router_behavior-library.html#functions">Functions</a></li>
+      <li><a href="fnx_router.lib.fnx_router_behavior/configureRouterNavigator.html">configureRouterNavigator</a></li>
+      <li><a href="fnx_router.lib.fnx_router_behavior/findParentRouter.html">findParentRouter</a></li>
+    
+    
+      <li class="section-title"><a href="fnx_router.lib.fnx_router_behavior/fnx_router.lib.fnx_router_behavior-library.html#classes">Classes</a></li>
+      <li><a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior-class.html">FnxRouterBehavior</a></li>
+      <li><a href="fnx_router.lib.fnx_router_behavior/FnxRouterNavigator-class.html">FnxRouterNavigator</a></li>
+    
+    </ol>
+  </div>
+
+  <div class="col-xs-12 col-sm-9 col-md-8 main-content">
+
+    <section class="desc markdown">
+    
+          <p>Routing behavior for Polymer elements.</p>
+<p>Use this to enable routing on your elements.</p>
+    
+    </section>
+
+    <section>
+        <dl class="dl-horizontal">
+
+
+
+          <dt>Implemented by</dt>
+          <dd><ul class="comma-separated clazz-relationships">
+              <li><a href="fnx_router.lib.fnx_router/FnxRouter-class.html">FnxRouter</a></li>
+          </ul></dd>
+
+          <dt>Annotations</dt>
+          <dd><ul class="annotation-list clazz-relationships">
+              <li>behavior</li>
+          </ul></dd>
+        </dl>
+    </section>
+
+
+
+
+    <section class="summary offset-anchor" id="instance-properties">
+        <h2>Properties</h2>
+
+        <dl class="properties">
+            <dt id="absoluteParentRoute" class="property">
+                <span class="name"><a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/absoluteParentRoute.html">absoluteParentRoute</a></span>
+                <span class="signature">&#8594; String</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write
+    </div>
+    <p>Absolute route of parent</p>
+            </dd>
+            <dt id="absoluteRoute" class="property">
+                <span class="name"><a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/absoluteRoute.html">absoluteRoute</a></span>
+                <span class="signature">&#8594; String</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write
+    </div>
+    <p>Absolute route calculated from parent</p>
+            </dd>
+            <dt id="navigator" class="property">
+                <span class="name"><a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/navigator.html">navigator</a></span>
+                <span class="signature">&#8594; <a href="fnx_router.lib.fnx_router_behavior/FnxRouterNavigator-class.html">FnxRouterNavigator</a></span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write
+    </div>
+    <p></p>
+            </dd>
+            <dt id="route" class="property">
+                <span class="name"><a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/route.html">route</a></span>
+                <span class="signature">&#8594; String</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write
+    </div>
+    <p>Relative route provided from mark-up</p>
+            </dd>
+            <dt id="routerParams" class="property">
+                <span class="name"><a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/routerParams.html">routerParams</a></span>
+                <span class="signature">&#8594; List&lt;String&gt;</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write
+    </div>
+    <p>Current router parameters</p>
+            </dd>
+            <dt id="routerVisible" class="property">
+                <span class="name"><a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/routerVisible.html">routerVisible</a></span>
+                <span class="signature">&#8594; bool</span>
+            </dt>
+            <dd>
+                <div class="features">
+        read / write
+    </div>
+    <p>Current state of element</p>
+            </dd>
+        </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="constructors">
+        <h2>Constructors</h2>
+
+        <dl class="constructor-summary-list">
+            <dt id="FnxRouterBehavior" class="callable">
+                <span class="name"><a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/FnxRouterBehavior.html">FnxRouterBehavior</a></span><span class="signature">()</span>
+            </dt>
+            <dd>
+                <p></p>
+            </dd>
+        </dl>
+      </section>
+
+
+      <section class="summary offset-anchor" id="instance-methods">
+          <h2>Methods</h2>
+          <dl class="callables">
+              <dt id="attached" class="callable">
+                  <a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/attached.html"><span class="name ">attached</span></a><span class="signature">(<wbr>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <p>Polymer lifecycle callback.<a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/attached.html">&hellip;</a>
+</p>
+              </dd>
+              <dt id="catchRouteChangeEvents" class="callable">
+                  <a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/catchRouteChangeEvents.html"><span class="name ">catchRouteChangeEvents</span></a><span class="signature">(<wbr><span class="parameter" id="catchRouteChangeEvents-param-e"><span class="type-annotation">Event</span> <span class="parameter-name">e</span></span>, <span class="parameter" id="catchRouteChangeEvents-param-detail"><span class="parameter-name">detail</span></span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <p>Listening for user interaction.<a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/catchRouteChangeEvents.html">&hellip;</a>
+</p>
+              </dd>
+              <dt id="navigateAbsolute" class="callable">
+                  <a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/navigateAbsolute.html"><span class="name ">navigateAbsolute</span></a><span class="signature">(<wbr><span class="parameter" id="navigateAbsolute-param-absoluteRoute"><span class="type-annotation">String</span> <span class="parameter-name">absoluteRoute</span></span>, [<span class="parameter" id="navigateAbsolute-param-params"><span class="type-annotation">List&lt;String&gt;</span> <span class="parameter-name">params</span> = <span class="default-value">null</span></span>])
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <p>Programmatically change current location (route) to any
+absolute path.<a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/navigateAbsolute.html">&hellip;</a>
+</p>
+              </dd>
+              <dt id="navigateToChild" class="callable">
+                  <a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/navigateToChild.html"><span class="name ">navigateToChild</span></a><span class="signature">(<wbr><span class="parameter" id="navigateToChild-param-route"><span class="type-annotation">String</span> <span class="parameter-name">route</span></span>, [<span class="parameter" id="navigateToChild-param-params"><span class="type-annotation">List&lt;String&gt;</span> <span class="parameter-name">params</span> = <span class="default-value">null</span></span>])
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <p>Programmatically change current location (route)
+so that specified child element of this element is visible.<a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/navigateToChild.html">&hellip;</a>
+</p>
+              </dd>
+              <dt id="navigateToElement" class="callable">
+                  <a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/navigateToElement.html"><span class="name ">navigateToElement</span></a><span class="signature">(<wbr><span class="parameter" id="navigateToElement-param-element"><span class="type-annotation">Element</span> <span class="parameter-name">element</span></span>, [<span class="parameter" id="navigateToElement-param-params"><span class="type-annotation">List&lt;String&gt;</span> <span class="parameter-name">params</span> = <span class="default-value">null</span></span>])
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <p>Programmatically change current location (route) so the 'element' in argument is visible.<a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/navigateToElement.html">&hellip;</a>
+</p>
+              </dd>
+              <dt id="navigateToSibling" class="callable">
+                  <a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/navigateToSibling.html"><span class="name ">navigateToSibling</span></a><span class="signature">(<wbr><span class="parameter" id="navigateToSibling-param-route"><span class="type-annotation">String</span> <span class="parameter-name">route</span></span>, [<span class="parameter" id="navigateToSibling-param-params"><span class="type-annotation">List&lt;String&gt;</span> <span class="parameter-name">params</span> = <span class="default-value">null</span></span>])
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <p>Programmatically change current location (route)
+so that specified sibling of this element is visible.<a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/navigateToSibling.html">&hellip;</a>
+</p>
+              </dd>
+              <dt id="routeChanged" class="callable">
+                  <a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/routeChanged.html"><span class="name ">routeChanged</span></a><span class="signature">(<wbr><span class="parameter" id="routeChanged-param-visible"><span class="type-annotation">bool</span> <span class="parameter-name">visible</span></span>, <span class="parameter" id="routeChanged-param-params"><span class="type-annotation">List&lt;String&gt;</span> <span class="parameter-name">params</span></span>)
+                      &#8594;
+                      <span class="returntype">void</span>
+                  </span>
+              </dt>
+              <dd>
+                  <p>Implement this callback in your element.<a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/routeChanged.html">&hellip;</a>
+</p>
+              </dd>
+          </dl>
+      </section>
+
+    </div> <!-- /.main-content -->
+
+  <div class="col-xs-6 col-sm-6 col-md-2 sidebar sidebar-offcanvas-right">
+    <h5>FnxRouterBehavior</h5>
+    <ol>
+    
+    
+    
+      <li class="section-title"><a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior-class.html#instance-properties">Properties</a></li>
+      <li><a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/absoluteParentRoute.html">absoluteParentRoute</a>
+</li>
+      <li><a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/absoluteRoute.html">absoluteRoute</a>
+</li>
+      <li><a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/navigator.html">navigator</a>
+</li>
+      <li><a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/route.html">route</a>
+</li>
+      <li><a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/routerParams.html">routerParams</a>
+</li>
+      <li><a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/routerVisible.html">routerVisible</a>
+</li>
+    
+      <li class="section-title"><a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior-class.html#constructors">Constructors</a></li>
+      <li><a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/FnxRouterBehavior.html">FnxRouterBehavior</a></li>
+    
+    
+      <li class="section-title"><a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior-class.html#instance-methods">Methods</a></li>
+      <li><a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/attached.html">attached</a>
+</li>
+      <li><a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/catchRouteChangeEvents.html">catchRouteChangeEvents</a>
+</li>
+      <li><a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/navigateAbsolute.html">navigateAbsolute</a>
+</li>
+      <li><a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/navigateToChild.html">navigateToChild</a>
+</li>
+      <li><a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/navigateToElement.html">navigateToElement</a>
+</li>
+      <li><a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/navigateToSibling.html">navigateToSibling</a>
+</li>
+      <li><a href="fnx_router.lib.fnx_router_behavior/FnxRouterBehavior/routeChanged.html">routeChanged</a>
+</li>
+    </ol>
+  </div><!--/.sidebar-offcanvas-->
+
+  </div> <!-- row -->
+</div> <!-- container -->
+
+<footer>
+    <div class="container-fluid">
+        <div class="container">
+            <p class="text-center">
+                <span class="no-break">
+                  fnx_router 0.1.0 api docs
+                </span>
+                &bull;
+                <span class="copyright no-break">
+                  <a href="https://www.dartlang.org">
+                    <img src="static-assets/favicon.png" alt="Dart" title="Dart"width="16" height="16">
+                  </a>
+                </span>
+                &bull;
+                <span class="copyright no-break">
+                  <a href="http://creativecommons.org/licenses/by-sa/4.0/">cc license</a>
+                </span>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="static-assets/typeahead.bundle.min.js"></script>
+<script src="static-assets/prettify.js"></script>
+<script src="static-assets/script.js"></script>
+<!-- Do not remove placeholder -->
+<!-- Footer Placeholder -->
+
+<!-- Made with <3 by dartdoc version 0.6.0+1 -->
+</body>
+
+</html>
