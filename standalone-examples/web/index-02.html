@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>fnx_router - demo</title>
+
+    <style>
+        h1, h2, h3 {
+            margin: 0;
+        }
+        li {
+            display: block;
+        }
+        a {
+            text-decoration: none;
+            display: inline-block;
+            padding: .1em;
+            margin: .1em;
+            background: #ddd;
+            font-family: monospace;
+        }
+        a:hover {
+            background: #bbb;
+        }
+        fnx-router:not([router-visible]) {
+            display: none;
+        }
+    </style>
+
+    <link rel="import" href="packages/fnx_router/fnx_router.html">
+    <link rel="import" href="packages/standalone_examples/fnx_router_alert.html">
+
+</head>
+
+<body unresolved >
+
+<a href="#/alert1">Open alert 1</a>
+<a href="#/alert2">Open alert 2</a>
+
+<fnx-router>
+    <fnx-router-alert route="alert1" message="Yes, I'm alert. Do you want to close me?"></fnx-router-alert>
+    <fnx-router-alert route="alert2" message="Big deal, I'm alert too."></fnx-router-alert>
+    <fnx-router route="alert1">Alert1 is visible</fnx-router>
+    <fnx-router route="alert2">Alert1 is visible</fnx-router>
+</fnx-router>
+
+<script type="application/dart" src="index.dart"></script>
+<script src="packages/browser/dart.js"></script>
+</body>
+</html>
