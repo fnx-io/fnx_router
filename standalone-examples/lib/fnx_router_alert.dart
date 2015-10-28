@@ -17,7 +17,7 @@ class FnxRouterAlert extends PolymerElement with FnxRouterBehavior {
 
   FnxRouterAlert.created() : super.created();
 
-  void routeChanged(bool visible, List<String> params) {
+  void routeChanged(bool visible, List<String> params, bool visibilityChanged) {
     if (visible) {
       async(() {
         // window.alert blocks rendering, so we should do it "async"

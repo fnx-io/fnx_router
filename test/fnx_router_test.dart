@@ -43,13 +43,13 @@ main() async {
   group("Start state: /1", () {
     test("Visible roots", () {
       print (rA);
-      expect(rA.routerVisible, equals(true));
-      expect(rB.routerVisible, equals(true));
-      expect(rA1.routerVisible, equals(true));
-      expect(rA1a.routerVisible, equals(false));
-      expect(rA2.routerVisible, equals(false));
-      expect(rB1.routerVisible, equals(true));
-      expect(rB1a.routerVisible, equals(false));
+      expect(rA.routeVisible, equals(true));
+      expect(rB.routeVisible, equals(true));
+      expect(rA1.routeVisible, equals(true));
+      expect(rA1a.routeVisible, equals(false));
+      expect(rA2.routeVisible, equals(false));
+      expect(rB1.routeVisible, equals(true));
+      expect(rB1a.routeVisible, equals(false));
     });
   });
 
@@ -59,13 +59,13 @@ main() async {
       rB1a.dataset["router"]="#/";
       rB1a.fire("tap");
 
-      expect(rA.routerVisible, equals(true), reason: "rA");
-      expect(rB.routerVisible, equals(true), reason: "rB");
-      expect(rA1.routerVisible, equals(false), reason: "rA1");
-      expect(rA1a.routerVisible, equals(false), reason: "rA1a");
-      expect(rA2.routerVisible, equals(false), reason: "rA2");
-      expect(rB1.routerVisible, equals(false), reason: "rB1");
-      expect(rB1a.routerVisible, equals(false), reason: "rB1a");
+      expect(rA.routeVisible, equals(true), reason: "rA");
+      expect(rB.routeVisible, equals(true), reason: "rB");
+      expect(rA1.routeVisible, equals(false), reason: "rA1");
+      expect(rA1a.routeVisible, equals(false), reason: "rA1a");
+      expect(rA2.routeVisible, equals(false), reason: "rA2");
+      expect(rB1.routeVisible, equals(false), reason: "rB1");
+      expect(rB1a.routeVisible, equals(false), reason: "rB1a");
 
       expect(navigator.getWindowLocationHash(), "#/");
     });
@@ -74,26 +74,26 @@ main() async {
       rB1a.dataset["router"]="#/1";
       rB1a.fire("tap");
 
-      expect(rA.routerVisible, equals(true), reason: "rA");
-      expect(rB.routerVisible, equals(true), reason: "rB");
-      expect(rA1.routerVisible, equals(true), reason: "rA1");
-      expect(rA1a.routerVisible, equals(false), reason: "rA1a");
-      expect(rA2.routerVisible, equals(false), reason: "rA2");
-      expect(rB1.routerVisible, equals(true), reason: "rB1");
-      expect(rB1a.routerVisible, equals(false), reason: "rB1a");
+      expect(rA.routeVisible, equals(true), reason: "rA");
+      expect(rB.routeVisible, equals(true), reason: "rB");
+      expect(rA1.routeVisible, equals(true), reason: "rA1");
+      expect(rA1a.routeVisible, equals(false), reason: "rA1a");
+      expect(rA2.routeVisible, equals(false), reason: "rA2");
+      expect(rB1.routeVisible, equals(true), reason: "rB1");
+      expect(rB1a.routeVisible, equals(false), reason: "rB1a");
     });
 
     test("Route to '#/2'", () {
       rB1a.dataset["router"]="#/2";
       rB1a.fire("tap");
 
-      expect(rA.routerVisible, equals(true), reason: "rA");
-      expect(rB.routerVisible, equals(true), reason: "rB");
-      expect(rA1.routerVisible, equals(false), reason: "rA1");
-      expect(rA1a.routerVisible, equals(false), reason: "rA1a");
-      expect(rA2.routerVisible, equals(true), reason: "rA2");
-      expect(rB1.routerVisible, equals(false), reason: "rB1");
-      expect(rB1a.routerVisible, equals(false), reason: "rB1a");
+      expect(rA.routeVisible, equals(true), reason: "rA");
+      expect(rB.routeVisible, equals(true), reason: "rB");
+      expect(rA1.routeVisible, equals(false), reason: "rA1");
+      expect(rA1a.routeVisible, equals(false), reason: "rA1a");
+      expect(rA2.routeVisible, equals(true), reason: "rA2");
+      expect(rB1.routeVisible, equals(false), reason: "rB1");
+      expect(rB1a.routeVisible, equals(false), reason: "rB1a");
 
       expect(rA.routerParams.isEmpty, equals(true), reason: "rA params");
       expect(rB.routerParams.isEmpty, equals(true), reason: "rB params");
@@ -105,13 +105,13 @@ main() async {
       rB1a.dataset["router"]="#/1/a";
       rB1a.fire("tap");
 
-      expect(rA.routerVisible, equals(true), reason: "rA");
-      expect(rB.routerVisible, equals(true), reason: "rB");
-      expect(rA1.routerVisible, equals(true), reason: "rA1");
-      expect(rA1a.routerVisible, equals(true), reason: "rA1a");
-      expect(rA2.routerVisible, equals(false), reason: "rA2");
-      expect(rB1.routerVisible, equals(true), reason: "rB1");
-      expect(rB1a.routerVisible, equals(true), reason: "rB1a");
+      expect(rA.routeVisible, equals(true), reason: "rA");
+      expect(rB.routeVisible, equals(true), reason: "rB");
+      expect(rA1.routeVisible, equals(true), reason: "rA1");
+      expect(rA1a.routeVisible, equals(true), reason: "rA1a");
+      expect(rA2.routeVisible, equals(false), reason: "rA2");
+      expect(rB1.routeVisible, equals(true), reason: "rB1");
+      expect(rB1a.routeVisible, equals(true), reason: "rB1a");
 
       expect(rA.routerParams.isEmpty, equals(true), reason: "rA params");
       expect(rB.routerParams.isEmpty, equals(true), reason: "rB params");
@@ -127,13 +127,13 @@ main() async {
       rB1a.dataset["routerParam4"]="will be ignored";
       rB1a.fire("tap");
 
-      expect(rA.routerVisible, equals(true), reason: "rA");
-      expect(rB.routerVisible, equals(true), reason: "rB");
-      expect(rA1.routerVisible, equals(false), reason: "rA1");
-      expect(rA1a.routerVisible, equals(false), reason: "rA1a");
-      expect(rA2.routerVisible, equals(true), reason: "rA2");
-      expect(rB1.routerVisible, equals(false), reason: "rB1");
-      expect(rB1a.routerVisible, equals(false), reason: "rB1a");
+      expect(rA.routeVisible, equals(true), reason: "rA");
+      expect(rB.routeVisible, equals(true), reason: "rB");
+      expect(rA1.routeVisible, equals(false), reason: "rA1");
+      expect(rA1a.routeVisible, equals(false), reason: "rA1a");
+      expect(rA2.routeVisible, equals(true), reason: "rA2");
+      expect(rB1.routeVisible, equals(false), reason: "rB1");
+      expect(rB1a.routeVisible, equals(false), reason: "rB1a");
 
       expect(rA.routerParams.isEmpty, equals(false), reason: "rA params");
       expect(rB.routerParams.isEmpty, equals(false), reason: "rB params");
@@ -155,13 +155,13 @@ main() async {
       rB1a.dataset["routerArg4"]="will be ignored";
       rB1a.fire("tap");
 
-      expect(rA.routerVisible, equals(true), reason: "rA");
-      expect(rB.routerVisible, equals(true), reason: "rB");
-      expect(rA1.routerVisible, equals(false), reason: "rA1");
-      expect(rA1a.routerVisible, equals(false), reason: "rA1a");
-      expect(rA2.routerVisible, equals(true), reason: "rA2");
-      expect(rB1.routerVisible, equals(false), reason: "rB1");
-      expect(rB1a.routerVisible, equals(false), reason: "rB1a");
+      expect(rA.routeVisible, equals(true), reason: "rA");
+      expect(rB.routeVisible, equals(true), reason: "rB");
+      expect(rA1.routeVisible, equals(false), reason: "rA1");
+      expect(rA1a.routeVisible, equals(false), reason: "rA1a");
+      expect(rA2.routeVisible, equals(true), reason: "rA2");
+      expect(rB1.routeVisible, equals(false), reason: "rB1");
+      expect(rB1a.routeVisible, equals(false), reason: "rB1a");
 
       expect(rA.routerParams.isEmpty, equals(false), reason: "rA params");
       expect(rB.routerParams.isEmpty, equals(false), reason: "rB params");
@@ -181,13 +181,13 @@ main() async {
       b.dataset["router"]="../a";
       b.click();
 
-      expect(rA.routerVisible, equals(true), reason: "rA");
-      expect(rB.routerVisible, equals(true), reason: "rB");
-      expect(rA1.routerVisible, equals(true), reason: "rA1");
-      expect(rA1a.routerVisible, equals(true), reason: "rA1a");
-      expect(rA2.routerVisible, equals(false), reason: "rA2");
-      expect(rB1.routerVisible, equals(true), reason: "rB1");
-      expect(rB1a.routerVisible, equals(true), reason: "rB1a");
+      expect(rA.routeVisible, equals(true), reason: "rA");
+      expect(rB.routeVisible, equals(true), reason: "rB");
+      expect(rA1.routeVisible, equals(true), reason: "rA1");
+      expect(rA1a.routeVisible, equals(true), reason: "rA1a");
+      expect(rA2.routeVisible, equals(false), reason: "rA2");
+      expect(rB1.routeVisible, equals(true), reason: "rB1");
+      expect(rB1a.routeVisible, equals(true), reason: "rB1a");
 
       expect(rA.routerParams.isEmpty, equals(true), reason: "rA params");
       expect(rB.routerParams.isEmpty, equals(true), reason: "rB params");

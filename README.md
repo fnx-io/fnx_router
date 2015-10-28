@@ -105,20 +105,39 @@ You can also change the route programmatically, but more about this later.
 
 **fnx_router** package contains `<fnx-router>` element. It's a
 simple `display: block;` element. You can use it instead of
-your regular `<div>`. It has one special attribute - `route`. Whenever particular element should be visible, it toggles a bool
-attribute `router-visible`. You can implement actual hiding anyway you want:
+your regular `<div>`.
+
+## Styling
+
+`FnxRouterBehavior` toggles two boolean attributes on your element during routing:
+
+- `router-visible`
+- `router-invisible`
+
+Use those attributes to hide your elements however you want: 
 
 	<style>
-		fnx-router:not([router-visible]) {
+		fnx-router[router-invisible] {
 			display: none;
 		}
-		.show-ghosts fnx-router:not([router-visible]) {
+		.show-ghosts fnx-router[router-invisible] {
 			opacity: 0.2;
 		}	
 	</style>
 
 _Note: It's discouraged to remove elements from DOM tree, see
-[polymer-dart wiki](https://github.com/dart-lang/polymer-dart/wiki/data-binding-helper-elements#conditional-templates)_
+[polymer-dart wiki](https://github.com/dart-lang/polymer-dart/wiki/data-binding-helper-elements#conditional-templates), that's
+one of the reasons we leave handling invisible elements up to you._
+
+To prevent FUOC, add `router-not-initialized` to body element and style it:
+
+	<style>
+		body[router-not-initialized] {
+			opacity: 0;
+		}
+	</style>
+
+After successful initialization, *fnx_router* exchanges this attribute for `router-initialized`.
 
 ## Routing parameters
 

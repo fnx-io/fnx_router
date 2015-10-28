@@ -4,46 +4,68 @@
     <title>fnx_router - demo</title>
 
     <style>
-        h1, h2, h3 {
-            margin: 0;
+        body[router-not-initialized] .example {
+            display: none;
         }
-        li {
-            display: block;
-        }
-        a {
-            text-decoration: none;
-            display: inline-block;
-            padding: .1em;
-            margin: .1em;
-            background: #ddd;
-            font-family: monospace;
-        }
-        a:hover {
-            background: #bbb;
-        }
-        fnx-router:not([router-visible]) {
+        *[route-invisible] {
             display: none;
         }
     </style>
 
+    <link rel="stylesheet" href="styles.css">
     <link rel="import" href="packages/fnx_router/fnx_router.html">
     <link rel="import" href="packages/standalone_examples/fnx_router_alert.html">
+    <link rel="import" href="packages/standalone_examples/fnx_router_async.html">
 
 </head>
 
-<body unresolved >
+<body unresolved router-not-initialized >
 
-<a href="#/alert1">Open alert 1</a>
-<a href="#/alert2">Open alert 2</a>
+<section class="info-bar">
+    <a href="index.html">back to index</a>
+    <a href="https://github.com/fnx-io/fnx_router/blob/master/standalone-examples/web/index-02.html">source code</a>
+    <a href="https://github.com/fnx-io/fnx_router/blob/master/standalone-examples/lib/fnx_router_alert.dart">fnx-router-alert</a>
+    <a href="https://github.com/fnx-io/fnx_router/blob/master/standalone-examples/lib/fnx_router_async.dart">fnx-router-async</a>
+</section>
 
-<fnx-router>
+<section class="example">
+
+    <ul>
+        <li>I don't say it's the best idea to open dialog based on URL (history etc.), but it's possible ...</li>
+        <li><a href="#/alert1">Open alert 1</a></li>
+        <li><a href="#/alert2">Open alert 2</a></li>
+    </ul>
+
     <fnx-router-alert route="alert1" message="Yes, I'm alert. Do you want to close me?"></fnx-router-alert>
     <fnx-router-alert route="alert2" message="Big deal, I'm alert too."></fnx-router-alert>
+
     <fnx-router route="alert1">Alert1 is visible</fnx-router>
-    <fnx-router route="alert2">Alert1 is visible</fnx-router>
-</fnx-router>
+    <fnx-router route="alert2">Alert2 is visible</fnx-router>
+
+    <ul>
+        <li>You will probably need to load some data when your element is displayed.</li>
+        <li><a href="#/async">Open data loading element</a></li>
+    </ul>
+
+    <fnx-router-async route="async">
+
+        <p>That was fun, let's dive <a href="#" data-router="./child">deeper!</a></p>
+
+        <fnx-router-async route="child">
+            <p>Yay! <a href="#" data-router="./child">Again!</a></p>
+
+            <fnx-router-async route="child">
+                <p>Ok. Now it's boring.</p>
+            </fnx-router-async>
+
+        </fnx-router-async>
+
+    </fnx-router-async>
+
+</section>
 
 <script type="application/dart" src="index.dart"></script>
 <script src="packages/browser/dart.js"></script>
+
 </body>
 </html>

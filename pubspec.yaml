@@ -1,5 +1,5 @@
 name: 'fnx_router'
-version: 0.1.0
+version: 0.2.1
 description: Declarative (mark-up) router for Polymer Dart 1.0
 author: Tomas Zverina <tomucha@gmail.com>
 #homepage: https://www.example.com

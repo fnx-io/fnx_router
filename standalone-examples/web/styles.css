@@ -1,0 +1,41 @@
+html, body {
+    padding: 0;
+}
+body {
+    font-family: sans-serif;
+}
+h1, h2, h3 {
+    margin: 0;
+}
+li {
+    display: block;
+}
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: .1em;
+    margin: .1em;
+    background: #ddd;
+    font-family: monospace;
+}
+a:hover {
+    background: #bbb;
+}
+fnx-router {
+    margin: 1em;
+    padding: .5em;
+    border: 1px solid #bbb;
+    box-shadow: 5px 5px 2px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.example {
+    padding: 2em;
+}
+.info-bar {
+    background: lightblue;
+    padding: 1em;
+}
+.info-bar p {
+    padding: 0;
+}
