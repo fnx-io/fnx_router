@@ -91,7 +91,7 @@ Possible values of `data-router` are:
 
 - `#/something` - absolute path to required element
 - `./something` - relative path to this element's child
-- `../something` - relative path to this element's siblink (only single '../' is supported for now, you cannot double-dot your path all the way up like '../../')
+- `../something` - relative path to this element's siblink (only single `../` is supported for now, you cannot double-dot your path all the way up like `../../`)
 
 Your `data-router` value must start with either `#/`, `./` or `../`.
 
@@ -99,28 +99,43 @@ Your `data-router` value must start with either `#/`, `./` or `../`.
 	<a href="#" data-router="./baby-girl">pictures of my girl</a>	
 	<a href="#" data-router="../my-dumb-brother">pictures of my brother</a>
 
-You can also change the route programmatically, but more about this later.
+You can also change the route programmatically, see [dartdoc](http://www.dartdocs.org/documentation/fnx_router/0.2.1/index.html).
 
 ## fnx-router element
 
 **fnx_router** package contains `<fnx-router>` element. It's a
-simple `display: block;` element. You can use it instead of
+simple `display: block;` element which you can use instead of
 your regular `<div>`.
+
+Specify dependency in pubspec.yaml:
+
+	dependencies:
+	  fnx_router: ^0.2.1
+
+Run `pub get`, import it in your html:
+
+	<link rel="import" href="packages/fnx_router/fnx_router.html">
+	
+... and in your "index.dart" (or whatever is the name of your main script):
+	
+	import 'package:fnx_router/fnx_router.dart';
+
+_Note: Importing this element in dart shouldn't be necessary, it seems like a Polymer bug to me. Or maybe I'm doing something wrong. I'm working on it._ 
 
 ## Styling
 
 `FnxRouterBehavior` toggles two boolean attributes on your element during routing:
 
-- `router-visible`
-- `router-invisible`
+- `route-visible`
+- `route-invisible`
 
 Use those attributes to hide your elements however you want: 
 
 	<style>
-		fnx-router[router-invisible] {
+		fnx-router[route-invisible] {
 			display: none;
 		}
-		.show-ghosts fnx-router[router-invisible] {
+		.show-ghosts fnx-router[route-invisible] {
 			opacity: 0.2;
 		}	
 	</style>
@@ -143,7 +158,7 @@ After successful initialization, *fnx_router* exchanges this attribute for `rout
 
 It would be nice to have routes like this: `/user/1234/edit`, but in current
 state of Polymer it would be difficult to create such link. Polymer doesn't
-support expressions at this moment, so you cannot write
+(support expressions)[https://github.com/Polymer/polymer/issues/1847] at this moment, so you cannot write
 `href="/user/{{user.id}}/edit"`.
 
 Because of this, your routes should be "hardwired constants" and everything what changes,
@@ -159,13 +174,13 @@ You still cannot render `href="#/my/hardwired/route;{{currentValueOfPI}};another
 		data-router-param2="another-parameter"
 		>go for PI</a>
 
-_Note: At this point routing parameters are simply a `List<String>`._
+_Note: Routing parameters are simply a `List<String>` at this point._
 
 ## Using router in your elements
 
 `fnx-router` element is really just a smarter div. You will probably need to fetch data from API
 whenever your element becomes visible etc. Good news - thanks to [Polymer behaviors](https://github.com/dart-lang/polymer-dart/wiki/behaviors),
-it's really easy.
+it's can be done really easy.
 
 Enhance your element with `FnxRouterBehavior` like this:
 
@@ -175,47 +190,43 @@ In your template:
 
 In your class:
 
-	class MySmartRestElement extends PolymerElement with FnxRouterBehavior {
+	class MySmartRestElement extends PolymerElement with FnxRouterBehavior {  // new behavior
 	...
 	
 And add a callback for visibility changes:
 	
-	void routeChanged(bool visible, List<String> params) {
+	void routeChanged(bool routeVisible, List<String> params, bool visibilityChanged) {
 		if (visible) { foo(); } else { bar(); }
 	}
 	
-For example, `fnx-router` element looks like this:
-
-    @PolymerRegister("fnx-router")
-    class FnxRouter extends PolymerElement with FnxRouterBehavior {
-    
-      FnxRouter.created() : super.created();
-    
-      void routeChanged(bool visible, List<String> params) {
-        if (visible) {
-          toggleAttribute("router-visible", true);
-        } else {
-          toggleAttribute("router-visible", false);
-        }
-    
-    }
-
 It cannot be easier! `routeChanged` callback will be invoked each time when:
 
 - your element is invisible and should become visible
 - your element is visible and should become invisible
-- your element is visible and should stay visible, but params changed (see _Routing parameters_ above)
+- your element is visible, should stay visible, but params changed (see _Routing parameters_ above)
+- your element is visible, should stay visible, but absolute route changed
+
+Use argument `visibilityChanged` to decide whether your visibility actually changed,
+or you are just being notified about some other change.
+
+	if (visible && visibilityChanged) {
+	  doSomeExpensiveLoadingStuff();
+	}
+	if (!visible && visibilityChanged) {
+	  cancelAllTasks();
+	}
+
 
 ## API
 
 With `FnxRouterBehavior` your element has access to:
 
 	// current state of visibility
-	@property(notify: true)
-	bool routerVisible = false;
+	@property
+	bool routeVisible = false;
 	
 	// last routing parameters
-	@property(notify: true)
+	@property
 	List<String> routerParams = [];
 	
 	// absolute route to parent element (/amazing)
@@ -225,6 +236,8 @@ With `FnxRouterBehavior` your element has access to:
 	// absolute route to this element (/amazing/stuff)
 	@property
 	String absoluteRoute = null;
+	
+... and some methods for navigation, see [dartdoc](http://www.dartdocs.org/documentation/fnx_router/0.2.1/index.html).	
 
 ## Notes, details and TODOs
 

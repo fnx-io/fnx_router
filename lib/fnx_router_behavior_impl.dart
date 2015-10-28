@@ -123,7 +123,7 @@ abstract class FnxRouterBehavior {
   void routeChanged(bool visible, List<String> params, bool visibilityChanged);
 
   /// Programmatically change current location (route) so that the `element` in argument becomes visible.
-  /// Call this method will change `window.location.href` accordingly.
+  /// Calling this method will change `window.location.href` accordingly.
   ///
   /// Element in argument can be any HtmlElement, but it must be nested under [FnxRouterBehavior] element.
   void navigateToElement(Element element, [List<String> params = null]) {
