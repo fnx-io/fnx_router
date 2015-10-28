@@ -19,6 +19,7 @@ Declarative hierarchical router for Polymer Dart 1.0. Use it like this:
 			
 			...
 
+See [examples](http://demo.fnx.io/fnx_router-examples/).
 
 Comes in with handy Polymer `@bahavior` which you can use to make **any of your elements** routing capable.
 
