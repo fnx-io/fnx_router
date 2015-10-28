@@ -307,15 +307,14 @@
             <span class="name ">routeChanged</span>(
             <br>
             <div class="parameters">
-                <span class="parameter" id="routeChanged-param-visible"><span class="type-annotation">bool</span> <span class="parameter-name">visible</span></span>,<br><span class="parameter" id="routeChanged-param-params"><span class="type-annotation">List&lt;String&gt;</span> <span class="parameter-name">params</span></span>
+                <span class="parameter" id="routeChanged-param-visible"><span class="type-annotation">bool</span> <span class="parameter-name">visible</span></span>,<br><span class="parameter" id="routeChanged-param-params"><span class="type-annotation">List&lt;String&gt;</span> <span class="parameter-name">params</span></span>,<br><span class="parameter" id="routeChanged-param-visibilityChanged"><span class="type-annotation">bool</span> <span class="parameter-name">visibilityChanged</span></span>
             </div>
             )    </section>
 
     <section class="desc markdown">
     
           <p>Callback for routing changes.</p>
-<p>Toggles 'router-visible' attribute on this element.
-Use it to style invisible elements.</p>
+<p>It doesn't do anything in this element.</p>
     
     </section>
 
@@ -323,14 +322,8 @@ Use it to style invisible elements.</p>
       <h2>Source</h2>
       <pre><code class="prettyprint lang-dart">/// Callback for routing changes.
 ///
-/// Toggles &apos;router-visible&apos; attribute on this element.
-/// Use it to style invisible elements.
-void routeChanged(bool visible, List&lt;String&gt; params) {
-  if (visible) {
-    toggleAttribute(&quot;router-visible&quot;, true);
-  } else {
-    toggleAttribute(&quot;router-visible&quot;, false);
-  }
+/// It doesn&apos;t do anything in this element.
+void routeChanged(bool visible, List&lt;String&gt; params, bool visibilityChanged) {
 }</code></pre>
     </section>
 
@@ -344,7 +337,7 @@ void routeChanged(bool visible, List&lt;String&gt; params) {
         <div class="container">
             <p class="text-center">
                 <span class="no-break">
-                  fnx_router 0.1.0 api docs
+                  fnx_router 0.2.1 api docs
                 </span>
                 &bull;
                 <span class="copyright no-break">

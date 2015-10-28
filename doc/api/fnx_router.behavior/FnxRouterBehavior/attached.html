@@ -89,7 +89,7 @@
 </li>
       <li><a href="fnx_router.behavior/FnxRouterBehavior/routerParams.html">routerParams</a>
 </li>
-      <li><a href="fnx_router.behavior/FnxRouterBehavior/routerVisible.html">routerVisible</a>
+      <li><a href="fnx_router.behavior/FnxRouterBehavior/routeVisible.html">routeVisible</a>
 </li>
     
       <li class="section-title"><a href="fnx_router.behavior/FnxRouterBehavior-class.html#constructors">Constructors</a></li>
@@ -125,7 +125,7 @@
     <section class="desc markdown">
     
           <p>Polymer lifecycle callback.</p>
-<p>At this point the element is initialized, absolute routes are resolved etc.</p>
+<p>At this point the element is registered for initialization. The actual initialization occurs 200ms after last registered element.</p>
     
     </section>
 
@@ -133,9 +133,16 @@
       <h2>Source</h2>
       <pre><code class="prettyprint lang-dart">/// Polymer lifecycle callback.
 ///
-/// At this point the element is initialized, absolute routes are resolved etc.
+/// At this point the element is registered for initialization. The actual initialization occurs 200ms after last registered element.
 void attached() {
-  _initRouting();
+  _log.info(&quot;Router node ${(this as HtmlElement).tagName} attached to document&quot;);
+
+  // hide everything for now, just to be sure
+  (this as PolymerElement).toggleAttribute(ATTR_ROUTE_VISIBLE, false);
+  (this as PolymerElement).toggleAttribute(ATTR_ROUTE_INVISIBLE, true);
+  _allRoutingNodesToInitialize.add(this);
+
+  (this as PolymerElement).debounce(&quot;fnx-router-init&quot;, _initializeAllRoutingNodes, waitTime: 200);
 }</code></pre>
     </section>
 
@@ -149,7 +156,7 @@ void attached() {
         <div class="container">
             <p class="text-center">
                 <span class="no-break">
-                  fnx_router 0.1.0 api docs
+                  fnx_router 0.2.1 api docs
                 </span>
                 &bull;
                 <span class="copyright no-break">

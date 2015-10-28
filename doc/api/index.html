@@ -164,19 +164,30 @@ Possible values of <code>data-router</code> are:</p><ul><li><code>#/something</c
 <h2>fnx-router element</h2>
 <p><strong>fnx_router</strong> package contains <code>&lt;fnx-router&gt;</code> element. It's a
 simple <code>display: block;</code> element. You can use it instead of
-your regular <code>&lt;div&gt;</code>. It has one special attribute - <code>route</code>. Whenever particular element should be visible, it toggles a bool
-attribute <code>router-visible</code>. You can implement actual hiding anyway you want:</p>
+your regular <code>&lt;div&gt;</code>.</p>
+<h2>Styling</h2>
+<p><code>FnxRouterBehavior</code> toggles two boolean attributes on your element during routing:</p><ul><li><code>router-visible</code></li><li><code>router-invisible</code></li></ul>
+<p>Use those attributes to hide your elements however you want: </p>
 <pre><code>&lt;style&gt;
-	fnx-router:not([router-visible]) {
+	fnx-router[router-invisible] {
 		display: none;
 	}
-	.show-ghosts fnx-router:not([router-visible]) {
+	.show-ghosts fnx-router[router-invisible] {
 		opacity: 0.2;
 	}	
 &lt;/style&gt;
 </code></pre>
 <p><em>Note: It's discouraged to remove elements from DOM tree, see
-<a href="https://github.com/dart-lang/polymer-dart/wiki/data-binding-helper-elements#conditional-templates">polymer-dart wiki</a></em></p>
+<a href="https://github.com/dart-lang/polymer-dart/wiki/data-binding-helper-elements#conditional-templates">polymer-dart wiki</a>, that's
+one of the reasons we leave handling invisible elements up to you.</em></p>
+<p>To prevent FUOC, add <code>router-not-initialized</code> to body element and style it:</p>
+<pre><code>&lt;style&gt;
+	body[router-not-initialized] {
+		opacity: 0;
+	}
+&lt;/style&gt;
+</code></pre>
+<p>After successful initialization, <em>fnx_router</em> exchanges this attribute for <code>router-initialized</code>.</p>
 <h2>Routing parameters</h2>
 <p>It would be nice to have routes like this: <code>/user/1234/edit</code>, but in current
 state of Polymer it would be difficult to create such link. Polymer doesn't
@@ -295,7 +306,7 @@ or fill-in a bugreport on <a href="https://github.com/fnx-io/fnx_router/issues">
         <div class="container">
             <p class="text-center">
                 <span class="no-break">
-                  fnx_router 0.1.0 api docs
+                  fnx_router 0.2.1 api docs
                 </span>
                 &bull;
                 <span class="copyright no-break">

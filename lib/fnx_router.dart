@@ -22,15 +22,16 @@ import 'package:fnx_router/fnx_router_behavior.dart';
 ///             </fnx-router>
 ///             ...
 ///
-/// Just remember to style invisible elements in CSS like this:
+/// Just remember to style invisible elements in CSS.
 ///
 /// 	  <style>
-///         *[router-invisible] {
+///         *[route-invisible] {
 ///             display: none;
 ///         }
 ///     </style>
 ///
-/// Or any way you like.
+/// ... and you are good to go.
+///
 @PolymerRegister("fnx-router")
 class FnxRouter extends PolymerElement with FnxRouterBehavior {
 
@@ -38,7 +39,7 @@ class FnxRouter extends PolymerElement with FnxRouterBehavior {
 
   /// Callback for routing changes.
   ///
-  /// In this element it doesn't do anything.
+  /// It doesn't do anything in this element.
   void routeChanged(bool visible, List<String> params, bool visibilityChanged) {
   }
 

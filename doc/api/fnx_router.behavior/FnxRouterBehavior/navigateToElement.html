@@ -89,7 +89,7 @@
 </li>
       <li><a href="fnx_router.behavior/FnxRouterBehavior/routerParams.html">routerParams</a>
 </li>
-      <li><a href="fnx_router.behavior/FnxRouterBehavior/routerVisible.html">routerVisible</a>
+      <li><a href="fnx_router.behavior/FnxRouterBehavior/routeVisible.html">routeVisible</a>
 </li>
     
       <li class="section-title"><a href="fnx_router.behavior/FnxRouterBehavior-class.html#constructors">Constructors</a></li>
@@ -128,16 +128,18 @@
 
     <section class="desc markdown">
     
-          <p>Programmatically change current location (route) so the 'element' in argument is visible.</p>
-<p>Element can be any HtmlElement, but it must be nested under FnxRouterBehavior element.</p>
+          <p>Programmatically change current location (route) so that the <code>element</code> in argument becomes visible.
+Call this method will change <code>window.location.href</code> accordingly.</p>
+<p>Element in argument can be any HtmlElement, but it must be nested under <a href="fnx_router.behavior/FnxRouterBehavior-class.html">FnxRouterBehavior</a> element.</p>
     
     </section>
 
     <section class="summary source-code" id="source">
       <h2>Source</h2>
-      <pre><code class="prettyprint lang-dart">/// Programmatically change current location (route) so the &apos;element&apos; in argument is visible.
+      <pre><code class="prettyprint lang-dart">/// Programmatically change current location (route) so that the `element` in argument becomes visible.
+/// Call this method will change `window.location.href` accordingly.
 ///
-/// Element can be any HtmlElement, but it must be nested under FnxRouterBehavior element.
+/// Element in argument can be any HtmlElement, but it must be nested under [FnxRouterBehavior] element.
 void navigateToElement(Element element, [List&lt;String&gt; params = null]) {
   FnxRouterBehavior _router = _findParentRouter(element);
   if (_router == null) {
@@ -157,7 +159,7 @@ void navigateToElement(Element element, [List&lt;String&gt; params = null]) {
         <div class="container">
             <p class="text-center">
                 <span class="no-break">
-                  fnx_router 0.1.0 api docs
+                  fnx_router 0.2.1 api docs
                 </span>
                 &bull;
                 <span class="copyright no-break">

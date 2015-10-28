@@ -102,14 +102,14 @@
         &lt;/fnx-router&gt;
         ...
 </code></pre>
-<p>Remember to style invisible elements in CSS like this:</p>
+<p>Just remember to style invisible elements in CSS.</p>
 <pre class="prettyprint lang-dart"><code>  &lt;style&gt;
-    fnx-router:not([router-visible]) {
+    *[route-invisible] {
         display: none;
     }
 &lt;/style&gt;
 </code></pre>
-<p>Or any way you like.</p>
+<p>... and you are good to go.</p>
     
     </section>
 
@@ -175,7 +175,7 @@
                 <div class="features">
         read / write, inherited
     </div>
-    <p>This element's route calculated from parent</p>
+    <p>This element's route calculated from the parent <a href="fnx_router.behavior/FnxRouterBehavior-class.html">FnxRouterBehavior</a>.</p>
             </dd>
             <dt id="attributes" class="property">
             <span class="name ">attributes</span>    
@@ -1472,15 +1472,15 @@ used when an explicit accessor is not available.</p>
     </div>
     <p>Current router parameters</p>
             </dd>
-            <dt id="routerVisible" class="property">
-            <span class="name ">routerVisible</span>    
+            <dt id="routeVisible" class="property">
+            <span class="name ">routeVisible</span>    
                 <span class="signature">&#8594; bool</span>
             </dt>
             <dd>
                 <div class="features">
         read / write, inherited
     </div>
-    <p>Current state of element</p>
+    <p>Current state of element.</p>
             </dd>
             <dt id="scrollHeight" class="property">
             <span class="name ">scrollHeight</span>    
@@ -2298,7 +2298,8 @@ to a named method on this element.</p>
               <dd>
                   <div class="features">inherited</div>
                   <p>Programmatically change current location (route) to any
-absolute path.</p>
+absolute path.
+Calling this method will change <code>window.location.href</code> accordingly.</p>
               </dd>
               <dt id="navigateToChild" class="callable">
                   <span class="name ">navigateToChild</span><span class="signature">(<wbr><span class="parameter" id="navigateToChild-param-route"><span class="type-annotation">String</span> <span class="parameter-name">route</span></span>, [<span class="parameter" id="navigateToChild-param-params"><span class="type-annotation">List&lt;String&gt;</span> <span class="parameter-name">params</span> = <span class="default-value">null</span></span>])
@@ -2309,7 +2310,8 @@ absolute path.</p>
               <dd>
                   <div class="features">inherited</div>
                   <p>Programmatically change current location (route)
-so that specified child element of this element is visible.</p>
+so that the specified child element of this element is visible.
+Calling this method will change <code>window.location.href</code> accordingly.</p>
               </dd>
               <dt id="navigateToElement" class="callable">
                   <span class="name ">navigateToElement</span><span class="signature">(<wbr><span class="parameter" id="navigateToElement-param-element"><span class="type-annotation">Element</span> <span class="parameter-name">element</span></span>, [<span class="parameter" id="navigateToElement-param-params"><span class="type-annotation">List&lt;String&gt;</span> <span class="parameter-name">params</span> = <span class="default-value">null</span></span>])
@@ -2319,7 +2321,8 @@ so that specified child element of this element is visible.</p>
               </dt>
               <dd>
                   <div class="features">inherited</div>
-                  <p>Programmatically change current location (route) so the 'element' in argument is visible.</p>
+                  <p>Programmatically change current location (route) so that the <code>element</code> in argument becomes visible.
+Call this method will change <code>window.location.href</code> accordingly.</p>
               </dd>
               <dt id="navigateToSibling" class="callable">
                   <span class="name ">navigateToSibling</span><span class="signature">(<wbr><span class="parameter" id="navigateToSibling-param-route"><span class="type-annotation">String</span> <span class="parameter-name">route</span></span>, [<span class="parameter" id="navigateToSibling-param-params"><span class="type-annotation">List&lt;String&gt;</span> <span class="parameter-name">params</span> = <span class="default-value">null</span></span>])
@@ -2330,7 +2333,8 @@ so that specified child element of this element is visible.</p>
               <dd>
                   <div class="features">inherited</div>
                   <p>Programmatically change current location (route)
-so that specified sibling of this element is visible.</p>
+so that the specified sibling of this element is visible.
+Calling this method will change <code>window.location.href</code> accordingly.</p>
               </dd>
               <dt id="notifyPath" class="callable">
                   <span class="name ">notifyPath</span><span class="signature">(<wbr><span class="parameter" id="notifyPath-param-path"><span class="type-annotation">String</span> <span class="parameter-name">path</span></span>, <span class="parameter" id="notifyPath-param-value"><span class="parameter-name">value</span></span>)
@@ -2546,7 +2550,7 @@ inserts the contents of <code>replacement</code> in its place for the list at <c
                   <p>Removes all objects from the list at <code>path</code> that fail to satisfy <code>test</code>.</p>
               </dd>
               <dt id="routeChanged" class="callable">
-                  <a href="fnx_router.element/FnxRouter/routeChanged.html"><span class="name ">routeChanged</span></a><span class="signature">(<wbr><span class="parameter" id="routeChanged-param-visible"><span class="type-annotation">bool</span> <span class="parameter-name">visible</span></span>, <span class="parameter" id="routeChanged-param-params"><span class="type-annotation">List&lt;String&gt;</span> <span class="parameter-name">params</span></span>)
+                  <a href="fnx_router.element/FnxRouter/routeChanged.html"><span class="name ">routeChanged</span></a><span class="signature">(<wbr><span class="parameter" id="routeChanged-param-visible"><span class="type-annotation">bool</span> <span class="parameter-name">visible</span></span>, <span class="parameter" id="routeChanged-param-params"><span class="type-annotation">List&lt;String&gt;</span> <span class="parameter-name">params</span></span>, <span class="parameter" id="routeChanged-param-visibilityChanged"><span class="type-annotation">bool</span> <span class="parameter-name">visibilityChanged</span></span>)
                       &#8594;
                       <span class="returntype">void</span>
                   </span>
@@ -2971,7 +2975,7 @@ local DOM.</p>
         <div class="container">
             <p class="text-center">
                 <span class="no-break">
-                  fnx_router 0.1.0 api docs
+                  fnx_router 0.2.1 api docs
                 </span>
                 &bull;
                 <span class="copyright no-break">

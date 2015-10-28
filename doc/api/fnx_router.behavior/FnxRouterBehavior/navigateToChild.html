@@ -89,7 +89,7 @@
 </li>
       <li><a href="fnx_router.behavior/FnxRouterBehavior/routerParams.html">routerParams</a>
 </li>
-      <li><a href="fnx_router.behavior/FnxRouterBehavior/routerVisible.html">routerVisible</a>
+      <li><a href="fnx_router.behavior/FnxRouterBehavior/routeVisible.html">routeVisible</a>
 </li>
     
       <li class="section-title"><a href="fnx_router.behavior/FnxRouterBehavior-class.html#constructors">Constructors</a></li>
@@ -129,7 +129,8 @@
     <section class="desc markdown">
     
           <p>Programmatically change current location (route)
-so that specified child element of this element is visible.</p>
+so that the specified child element of this element is visible.
+Calling this method will change <code>window.location.href</code> accordingly.</p>
 <pre class="prettyprint lang-dart"><code>navigateToSibling("my-child");
 </code></pre>
     
@@ -138,7 +139,9 @@ so that specified child element of this element is visible.</p>
     <section class="summary source-code" id="source">
       <h2>Source</h2>
       <pre><code class="prettyprint lang-dart">/// Programmatically change current location (route)
-/// so that specified child element of this element is visible.
+/// so that the specified child element of this element is visible.
+/// Calling this method will change `window.location.href` accordingly.
+///
 ///
 ///     navigateToSibling(&quot;my-child&quot;);
 void navigateToChild(String route, [List&lt;String&gt; params = null]) {
@@ -156,7 +159,7 @@ void navigateToChild(String route, [List&lt;String&gt; params = null]) {
         <div class="container">
             <p class="text-center">
                 <span class="no-break">
-                  fnx_router 0.1.0 api docs
+                  fnx_router 0.2.1 api docs
                 </span>
                 &bull;
                 <span class="copyright no-break">

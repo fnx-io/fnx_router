@@ -89,7 +89,7 @@
 </li>
       <li><a href="fnx_router.behavior/FnxRouterBehavior/routerParams.html">routerParams</a>
 </li>
-      <li><a href="fnx_router.behavior/FnxRouterBehavior/routerVisible.html">routerVisible</a>
+      <li><a href="fnx_router.behavior/FnxRouterBehavior/routeVisible.html">routeVisible</a>
 </li>
     
       <li class="section-title"><a href="fnx_router.behavior/FnxRouterBehavior-class.html#constructors">Constructors</a></li>
@@ -122,17 +122,27 @@
             <span class="name ">routeChanged</span>(
             <br>
             <div class="parameters">
-                <span class="parameter" id="routeChanged-param-visible"><span class="type-annotation">bool</span> <span class="parameter-name">visible</span></span>,<br><span class="parameter" id="routeChanged-param-params"><span class="type-annotation">List&lt;String&gt;</span> <span class="parameter-name">params</span></span>
+                <span class="parameter" id="routeChanged-param-visible"><span class="type-annotation">bool</span> <span class="parameter-name">visible</span></span>,<br><span class="parameter" id="routeChanged-param-params"><span class="type-annotation">List&lt;String&gt;</span> <span class="parameter-name">params</span></span>,<br><span class="parameter" id="routeChanged-param-visibilityChanged"><span class="type-annotation">bool</span> <span class="parameter-name">visibilityChanged</span></span>
             </div>
             )    </section>
 
     <section class="desc markdown">
     
           <p>Implement this callback in your element.</p>
-<p>will be invoked each time when:
+<p>It will be invoked each time when:
 <em> your element is invisible and should become visible
 </em> your element is visible and should become invisible
-* your element is visible and should stay visible, but params changed (see <em>Routing parameters</em> above)</p>
+<em> your element is visible, should stay visible, but params changed (see <a href="fnx_router.behavior/FnxRouterBehavior/routerParams.html">routerParams</a>)
+</em> your element is visible, should stay visible, but route changed</p>
+<p>Use argument <code>visibilityChanged</code> to decide whether your visibility actually changed,
+or you are just being notified about some other change.</p>
+<pre class="prettyprint lang-dart"><code>if (visible &amp;&amp; visibilityChanged) {
+  doSomeExpensiveLoadingStuff();
+}
+if (!visible &amp;&amp; visibilityChanged) {
+  cancelAllTasks();
+}
+</code></pre>
     
     </section>
 
@@ -140,11 +150,23 @@
       <h2>Source</h2>
       <pre><code class="prettyprint lang-dart">/// Implement this callback in your element.
 ///
-/// will be invoked each time when:
+/// It will be invoked each time when:
 /// * your element is invisible and should become visible
 /// * your element is visible and should become invisible
-/// * your element is visible and should stay visible, but params changed (see _Routing parameters_ above)
-void routeChanged(bool visible, List&lt;String&gt; params);</code></pre>
+/// * your element is visible, should stay visible, but params changed (see [routerParams])
+/// * your element is visible, should stay visible, but route changed
+///
+/// Use argument `visibilityChanged` to decide whether your visibility actually changed,
+/// or you are just being notified about some other change.
+///
+///     if (visible &amp;&amp; visibilityChanged) {
+///       doSomeExpensiveLoadingStuff();
+///     }
+///     if (!visible &amp;&amp; visibilityChanged) {
+///       cancelAllTasks();
+///     }
+///
+void routeChanged(bool visible, List&lt;String&gt; params, bool visibilityChanged);</code></pre>
     </section>
 
   </div> <!-- /.main-content -->
@@ -157,7 +179,7 @@ void routeChanged(bool visible, List&lt;String&gt; params);</code></pre>
         <div class="container">
             <p class="text-center">
                 <span class="no-break">
-                  fnx_router 0.1.0 api docs
+                  fnx_router 0.2.1 api docs
                 </span>
                 &bull;
                 <span class="copyright no-break">

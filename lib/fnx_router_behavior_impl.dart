@@ -1,10 +1,10 @@
 part of fnx_router.behavior;
 
-/// You [FnxRouterBehavior] elements will have this attribute when visible.
-const ATTR_ROUTE_VISIBLE = "route-visible";
+/// Your [FnxRouterBehavior] elements will have this attribute when visible. Use it to style your elements in CSS.
+const String ATTR_ROUTE_VISIBLE = "route-visible";
 
-/// You [FnxRouterBehavior] elements will have this attribute when visible.
-const ATTR_ROUTE_INVISIBLE = "route-invisible";
+/// Your [FnxRouterBehavior] elements will have this attribute when visible. Use it to style your elements in CSS.
+const String ATTR_ROUTE_INVISIBLE = "route-invisible";
 
 
 /// Routing behavior for Polymer elements.
@@ -17,11 +17,13 @@ abstract class FnxRouterBehavior {
   @property
   String route = null;
 
-  /// Current state of element
+  /// Current state of element.
+  ///
+  /// Please don't change it. Just read it.
   @property
   bool routeVisible = null;
 
-  /// This element's route calculated from parent
+  /// This element's route calculated from the parent [FnxRouterBehavior].
   @property
   String absoluteRoute = null;
 
@@ -43,12 +45,15 @@ abstract class FnxRouterBehavior {
 
   /// Polymer lifecycle callback.
   ///
-  /// At this point the element is initialized, absolute routes are resolved etc.
+  /// At this point the element is registered for initialization. The actual initialization occurs 200ms after last registered element.
   void attached() {
     _log.info("Router node ${(this as HtmlElement).tagName} attached to document");
+
+    // hide everything for now, just to be sure
     (this as PolymerElement).toggleAttribute(ATTR_ROUTE_VISIBLE, false);
     (this as PolymerElement).toggleAttribute(ATTR_ROUTE_INVISIBLE, true);
     _allRoutingNodesToInitialize.add(this);
+
     (this as PolymerElement).debounce("fnx-router-init", _initializeAllRoutingNodes, waitTime: 200);
   }
 
@@ -99,14 +104,14 @@ abstract class FnxRouterBehavior {
 
   /// Implement this callback in your element.
   ///
-  /// will be invoked each time when:
+  /// It will be invoked each time when:
   /// * your element is invisible and should become visible
   /// * your element is visible and should become invisible
-  /// * your element is visible and should stay visible, but params changed (see _Routing parameters_ above)
-  /// * your element is visible, shoudk stay visible, but route changed
+  /// * your element is visible, should stay visible, but params changed (see [routerParams])
+  /// * your element is visible, should stay visible, but route changed
   ///
-  /// Use argument visibilityChanged to decide whether your visibility actually changed,
-  /// or you are just notified about other change.
+  /// Use argument `visibilityChanged` to decide whether your visibility actually changed,
+  /// or you are just being notified about some other change.
   ///
   ///     if (visible && visibilityChanged) {
   ///       doSomeExpensiveLoadingStuff();
@@ -117,9 +122,10 @@ abstract class FnxRouterBehavior {
   ///
   void routeChanged(bool visible, List<String> params, bool visibilityChanged);
 
-  /// Programmatically change current location (route) so that the 'element' in argument is visible.
+  /// Programmatically change current location (route) so that the `element` in argument becomes visible.
+  /// Call this method will change `window.location.href` accordingly.
   ///
-  /// Element can be any HtmlElement, but it must be nested under FnxRouterBehavior element.
+  /// Element in argument can be any HtmlElement, but it must be nested under [FnxRouterBehavior] element.
   void navigateToElement(Element element, [List<String> params = null]) {
     FnxRouterBehavior _router = _findParentRouter(element);
     if (_router == null) {
@@ -130,6 +136,7 @@ abstract class FnxRouterBehavior {
 
   /// Programmatically change current location (route)
   /// so that the specified sibling of this element is visible.
+  /// Calling this method will change `window.location.href` accordingly.
   ///
   ///     navigateToSibling("my-brother");
   void navigateToSibling(String route, [List<String> params = null]) {
@@ -137,7 +144,9 @@ abstract class FnxRouterBehavior {
   }
 
   /// Programmatically change current location (route)
-  /// so that specified child element of this element is visible.
+  /// so that the specified child element of this element is visible.
+  /// Calling this method will change `window.location.href` accordingly.
+  ///
   ///
   ///     navigateToSibling("my-child");
   void navigateToChild(String route, [List<String> params = null]) {
@@ -146,6 +155,7 @@ abstract class FnxRouterBehavior {
 
   /// Programmatically change current location (route) to any
   /// absolute path.
+  /// Calling this method will change `window.location.href` accordingly.
   ///
   ///     navigateAbsolute("/amazing/stuff/somewhere/deep");
   void navigateAbsolute(String absoluteRoute, [List<String> params = null]) {
@@ -169,7 +179,7 @@ abstract class FnxRouterBehavior {
     }
 
     _buildAbsoluteRoutes();
-    _registerRoutingNode();
+    _registerForRouting();
     _resolveVisibility(_navigatorRef._currentRoute);
 
   }
@@ -195,12 +205,12 @@ abstract class FnxRouterBehavior {
     _log.info("Registered route '${absoluteRoute}' for element $this");
   }
 
-  void _registerRoutingNode() {
+  void _registerForRouting() {
     _allRoutingNodes.add(this);
   }
 
   void _resolveVisibility(String routeWithParams, [List<String> params]) {
-    _log.fine("'$absoluteRoute' resolving it's visibility for '$routeWithParams' route");
+    _log.fine("'$absoluteRoute' is resolving it's visibility for '$routeWithParams' route");
     bool newVisible = false;
     if (routeWithParams == null) {
       // not visible
@@ -261,11 +271,11 @@ abstract class FnxRouterBehavior {
         }
       }
 
-      _log.fine("'$absoluteRoute' is calling routeChanged");
+      _log.fine("'$absoluteRoute' is calling routeChanged callback");
       routeChanged(routeVisible, routerParams, _visibilityChanged);
 
-      _log.fine("'$absoluteRoute' is firing 'router-visibility' event");
-      (this as PolymerElement).fire("router-visibility", detail: routeVisible);
+      _log.fine("'$absoluteRoute' is firing 'route-visibility' event");
+      (this as PolymerElement).fire("route-visibility", detail: routeVisible);
 
     }
   }

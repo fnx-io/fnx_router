@@ -36,10 +36,18 @@ Logger _log = new Logger("FnxRouterBehavior");
 /// Add this attribute to the document body to prevent FUOC.
 ///
 /// After successful initialization fnx router will remove this attribute.
-const BODY_ATTR_ROUTER_NOT_INITIALIZED = "router-not-initialized";
+/// Use it in CSS to prevent FUOC.
+///
+///     <style>
+///         body[router-not-initialized] {
+///           display: none;
+///         }
+///     </style>
+///
+const String BODY_ATTR_ROUTER_NOT_INITIALIZED = "router-not-initialized";
 
-/// Router will add this attribute to the body after successful initialization.
-const BODY_ATTR_ROUTER_INITIALIZED = "router-initialized";
+/// Router will add this attribute to the document body after successful initialization.
+const String BODY_ATTR_ROUTER_INITIALIZED = "router-initialized";
 
 /// Finds the first ancestor element with [FnxRouterBehavior].
 ///
