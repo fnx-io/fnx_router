@@ -1,5 +1,5 @@
 # Changelog
 
-## 0.1.0
+## 0.2.1
 
-- Initial version, created by Stagehand
+- Initial public version

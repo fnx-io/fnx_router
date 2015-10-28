@@ -40,11 +40,14 @@ Their absolute route depends on route of their parents (and recursively up to th
 	<fnx-router> <!-- this is a routing root and it has no
 	                  "route" attribute , it will be visible always -->
 	                  
-		<fnx-router route="amazing"> <!-- visible on #/amazing -->
+		<!-- visible on #/amazing -->	                  
+		<fnx-router route="amazing"> 
 		
-			<fnx-router route="stuff"> <!-- visible on #/amazing/stuff -->
+			<!-- visible on #/amazing/stuff -->
+			<fnx-router route="stuff"> 
 			
-				<fnx-router route="vol1"> <!-- visible on #/amazing/stuff/vol1 -->
+				<!-- visible on #/amazing/stuff/vol1 -->			
+				<fnx-router route="vol1"> 
 
 Level separator `/` is a constant provided by *fnx_router*.
 
@@ -65,11 +68,9 @@ There are several other ways how to navigate.
 	
 		<fnx-router route="amazing">
 			
-			<a href="#" data-router="./stuff">stuff</a>
-			
-			<a href="#" data-router="./features">features</a>
-			
-			<a href="#" data-router="../regular">hide amazing, show regular</a>
+			<a href="#" data-router="./stuff">stuff</a>			
+			<a href="#" data-router="./features">features</a>			
+			<a href="#" data-router="../regular">show regular</a>
 			
 			<fnx-router route="stuff">
 				<h1>WOW!</h1>
@@ -187,16 +188,22 @@ Enhance your element with `FnxRouterBehavior` like this:
 
 In your template:
 	
-	<dom-module id="my-smart-rest-element" attributes="route"><!-- new attribute -->
+	<!-- new attribute -->
+	<dom-module id="my-smart-rest-element" attributes="route">
 
 In your class:
 
-	class MySmartRestElement extends PolymerElement with FnxRouterBehavior {  // new behavior
+	/* new behavior */
+	class MySmartRestElement extends PolymerElement with FnxRouterBehavior {
 	...
 	
 And add a callback for visibility changes:
 	
-	void routeChanged(bool routeVisible, List<String> params, bool visibilityChanged) {
+	void routeChanged(
+		bool routeVisible,
+		List<String> params,
+		bool visibilityChanged) {
+		
 		if (visible) { foo(); } else { bar(); }
 	}
 	
@@ -230,7 +237,7 @@ With `FnxRouterBehavior` your element has access to:
 	@property
 	List<String> routerParams = [];
 	
-	// absolute route to parent element (/amazing)
+	// absolute route to the parent element (/amazing)
 	@property
 	String absoluteParentRoute = null;
 	
