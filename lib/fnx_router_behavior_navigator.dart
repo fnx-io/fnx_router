@@ -33,13 +33,13 @@ class FnxRouterNavigator {
       }
       return;
     }
-    // hash = Uri.decodeComponent(hash);
-    List<String> params = _parseRouteParams(hash);
-
     if (hash == _currentRoute) {
       // no change
       return;
     }
+
+    List<String> params = _parseRouteParams(hash);
+
     _currentRoute = hash;
     _resolveVisibilities(hash, params);
   }

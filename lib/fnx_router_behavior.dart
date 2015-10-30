@@ -72,7 +72,7 @@ void _initializeAllRoutingNodes() {
   _allRoutingNodesToInitialize.clear();
   BodyElement body = window.document.querySelector("body");
   body.attributes.remove(BODY_ATTR_ROUTER_NOT_INITIALIZED);
-  body.attributes[BODY_ATTR_ROUTER_INITIALIZED] = true;
+  body.attributes[BODY_ATTR_ROUTER_INITIALIZED] = BODY_ATTR_ROUTER_INITIALIZED;
   _log.info("Router initialization finished");
 }
 
